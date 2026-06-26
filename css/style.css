@@ -1,0 +1,2182 @@
+/* 
+Theme Name: Nejnii Satin
+Version: 1.0 
+. 
+It's like like for like one. 
+. 
+*/
+
+/* ---------------------- IMPORT CSS ---------------------- */
+
+/* ---------------------- CSS FOR SLIDER ---------------------- */
+@import url(fancy.css)/*tpa=http://glavpostel.biz/css/fancy.css*/;
+/* ---------------------- CSS FOR ANIMATION ---------------------- */
+@import url(anim.css)/*tpa=http://glavpostel.biz/css/anim.css*/;
+/* ---------------------- CSS FOR FONTS ICONS ---------------------- */
+@import url(fonts.css)/*tpa=http://glavpostel.biz/css/fonts.css*/;
+@import url(slider.css)/*tpa=http://glavpostel.biz/css/slider.css*/;
+/* ---------------------- END IMPORT CSS ---------------------- */
+
+
+/*
+
+PROJECT - NEJNI SATIN
+
+-------------------------------------------------------------------------------------------------------
+1. IMPORT CSS
+-------------------------------------------------------------------------------------------------------
+2. GLOBAL STYLES
+-------------------------------------------------------------------------------------------------------
+3. HEADER
+        - 3.1 HEADER ITEMS
+-------------------------------------------------------------------------------------------------------
+4. LINE
+-------------------------------------------------------------------------------------------------------
+5. PRODUCTS
+-------------------------------------------------------------------------------------------------------
+6. STYLE AND REVIEWS
+        - 6.1 STYLE
+        - 6.2 REVIEWS
+-------------------------------------------------------------------------------------------------------
+7. CERTIFICATES
+-------------------------------------------------------------------------------------------------------
+8. HOW WORK
+-------------------------------------------------------------------------------------------------------
+9. INTRO
+-------------------------------------------------------------------------------------------------------
+10. IMAGES
+-------------------------------------------------------------------------------------------------------
+
+
+
+
+
+*/
+
+
+/* ---------------------- GLOBAL STYLES ---------------------- */
+@font-face {
+    font-family: ArialNarrow;
+    src: url(fonts/Arial.ttf)/*tpa=http://glavpostel.biz/css/fonts/Arial.ttf*/;
+}
+
+@font-face {
+    font-family: ArialB;
+    src: url(fonts/ArialBold.ttf)/*tpa=http://glavpostel.biz/css/fonts/ArialBold.ttf*/;
+}
+
+@font-face {
+    font-family: LucidaI;
+    src: url(fonts/Lucida.ttf)/*tpa=http://glavpostel.biz/css/fonts/Lucida.ttf*/;
+}
+
+@font-face {
+    font-family: Number;
+    src: url(fonts/number.ttf)/*tpa=http://glavpostel.biz/css/fonts/number.ttf*/;
+}
+
+@font-face {
+    font-family: LucidaIB;
+    src: url(fonts/LucidaB.ttf)/*tpa=http://glavpostel.biz/css/fonts/LucidaB.ttf*/;
+}
+
+@font-face {
+    font-family: Bebas;
+    src: url(fonts/Bebas.otf)/*tpa=http://glavpostel.biz/css/fonts/Bebas.otf*/;
+}
+
+@font-face {
+    font-family: BebasB;
+    src: url(fonts/BebasB.otf)/*tpa=http://glavpostel.biz/css/fonts/BebasB.otf*/;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body
+{
+    font-family:'ArialNarrow';
+    padding:0;
+    margin:0;
+    font-size:16px;
+}
+
+.wrapper{
+    width:1046px;
+    margin:0 auto;
+}
+
+.clear:after{
+    content:'';
+    clear:both;
+    display:block;
+}
+
+a, .a-duration{
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s; 
+}
+
+b{
+    font-family:'ArialB';
+}
+
+/* ---------------------- END GLOBAL STYLES ---------------------- */
+
+/* ---------------------- HEADER ---------------------- */
+
+header{
+    background-image:url(../images/background.jpg)/*tpa=http://glavpostel.biz/images/background.jpg*/;
+    color:#fff;
+    background-size:cover;
+    background-position: center;
+}
+
+.home-content{
+    padding-top:25px;
+    padding-bottom:80px;
+}
+
+/* HEADER ITEMS */
+
+.logo{
+    font-family:'LucidaIB';
+    font-size:20px;
+    letter-spacing:-1px;
+    display:table;
+
+}
+
+.logo-ico{
+    background:url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/no-repeat;
+    width:47px;
+    height:31px;
+    background-position: -124px -31px;
+    display:table-cell;
+    vertical-align:bottom;
+}
+
+.logo-box{
+    display:table-cell;
+    vertical-align:bottom;
+    padding-left:10px;
+}
+
+.home-info-fix{
+    padding-top:80px;
+}
+
+.home-info-box{
+    background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    display:inline-block;
+    padding:22px;
+    border-radius:0 0 97px 0px;
+    max-width:500px;
+}
+
+.home-info-box .title{
+    font-family:'LucidaIB';
+    font-weight:bold;
+    font-size:36px;
+    text-transform:uppercase;
+    letter-spacing:-2px;
+    line-height:49px;
+}
+
+.header-box-fixed-fix{
+    height:inherit !important;
+}
+
+.home-info-box .description{
+    font-family:'LucidaI';
+    font-size:19px;
+    letter-spacing:-1px;
+    margin-top:5px;
+    line-height:24px;
+}
+
+.home-info-box .description b{
+    font-family:'LucidaIB';
+    font-weight:normal;
+}
+
+.home-content .home-item:first-child{
+    float:left;
+}
+
+.home-content .home-item:last-child{
+    float:right;
+}
+
+/** TWO PAST **/
+
+.home-cont{
+    padding-right:45px;
+}
+
+.home-number{
+    color:#2f2f2f;
+    font-size:17px;
+    text-align:right;
+}
+
+.home-number span{
+    font-family:'Number';
+    font-size:20px;
+    letter-spacing:-1px;
+    padding-left:15px;
+}
+
+.home-number-desc{
+    text-align:right;
+    color:#2f2f2f;
+    margin-top:14px;
+}
+
+.home-cont-box{
+    background:rgba(255,255,255,0.8);
+    padding:30px 40px;
+    max-width:309px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.home-cont-box .title{
+    font-family:'LucidaIB';
+    color:#1f2025;
+    letter-spacing:-1px;
+    font-size:20px;
+}
+
+.home-cont-box .desc{
+    color:#6c6c6c;
+    font-size:17px;
+    margin-top:7px;
+}
+
+.home-cont-box .button a{
+    background: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    border-radius:8px;
+    padding:10px 20px;
+    display:inline-block;
+    color:#fff;
+    font-family:'Bebas';
+    letter-spacing:2px;
+    font-size:18px;
+    text-decoration:none;
+    margin-top:12px;
+}
+
+.home-cont-box .button a .fa{
+    padding-right:7px;
+}
+
+.home-cont-box .button a:hover{
+    background: linear-gradient(180deg, #ff3f64 0%, #ff3f64 100%);
+}
+
+/* END HEADER ITEMS */
+
+/* ---------------------- END HEADER ---------------------- */
+
+/* ---------------------- LINE ---------------------- */
+
+.home-line{
+    background-image: linear-gradient(180deg, #a730d5 0%, #8f40ae 100%);
+    position:relative;
+}
+
+.line-desc{
+    color:#fff;
+    display:table-cell;
+    vertical-align:top;
+    width:48%;
+    position:relative;
+}
+
+.line-desc .ico{
+    background: url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/no-repeat;
+    background-position: -181px 0;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    right: 550px;
+    top: 19px;
+}
+
+.home-line-box{
+    display:table;
+    width:100%;
+    position:relative;
+}
+
+.line-info-desc{
+    color:#fff;
+    display:table-cell;
+    vertical-align:middle;
+    width:40%;
+}
+
+.line-info-desc .title{
+    font-family:'BebasB';
+    font-size:24px;
+    letter-spacing:1px;
+}
+
+.line-info-desc .desc{
+    font-size:17px;
+    font-family:'ArialB';
+    margin-top:5px;
+    letter-spacing:0.1px;
+}
+
+.line-items{
+    background:#e7e7e7;
+    display:table-cell;
+    vertical-align:top;
+    height:98px;
+    width:52%;
+    position:relative;
+}
+
+.line-items:after{
+    background:url(../images/ico1.png)/*tpa=http://glavpostel.biz/images/ico1.png*/no-repeat;
+    width:173px;
+    height:98px;
+    content:'';
+    display:block;
+    position:absolute;
+    left:-173px;
+    top:0px;
+}
+
+.home-line-info{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.dt{
+    display:table;
+    height:100%;
+    width:100%;
+}
+
+.home-line-info .wrapper{
+    height:100%;
+}
+
+.line-items-box{
+    vertical-align:middle;
+    display:table-cell;
+    width:60%;
+    padding-right:40px;
+}
+
+.line-items-box .line-item{
+    float:left;
+    width:50%;
+    padding:0 20px;
+}
+
+.line-items-box .line-item:first-child{
+    padding-left:0px;
+    position:relative;
+}
+
+.line-items-box .line-item:first-child:after{
+    background:#979797;
+    height:100%;
+    width:1px;
+    content:'';
+    display:block;
+    position:absolute;
+    right:29px;
+    top:0;
+}
+
+.line-items-box .line-item:last-child{
+    padding-right:0px;
+}
+
+.line-item .ico{
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.line-item .ico:after{
+    content:'';
+    display:block;
+    background:url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/no-repeat;
+    width: 40px;
+    height: 40px;
+    background-position: -84px -46px;
+}
+
+.line-items-box .line-item:nth-child(2) .ico:after{
+    background-position:-84px -46px;
+    height:40px;
+    width:40px;
+}
+
+.line-item .info{
+    display:table-cell;
+    padding-left:20px;
+    vertical-align:middle;
+}
+
+.line-item .info .title{
+    font-size:18px;
+    font-family:'ArialB';
+    text-transform:uppercase;
+    color:#000000;
+}
+
+.line-item .info .desc{
+    font-size:18px;
+    color:#2f2f2f;
+}
+
+/* ---------------------- END LINE ---------------------- */
+
+/* ---------------------- PRODUCTS ---------------------- */
+
+.products-box{
+    padding:50px 0;
+    padding-bottom:90px;
+}
+
+ul.products-filter{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 65px;
+    display: table;
+}
+
+ul.products-filter li{
+        list-style: none;
+    float: left;
+        width: 259px;
+    padding: 0 15px;
+    display: inline-block;
+}
+
+ul.products-filter li a{
+    display:block;
+    text-align:center;
+    padding:13px 0;
+    border:1px solid #dedede;
+    border-radius:85px;
+    font-family:'ArialB';
+    text-decoration:none;
+    color:#595959;
+    cursor:pointer;
+}
+
+ul.products-filter li a:hover{
+    border:1px solid #ff846a;
+    box-shadow:0px 1px 0px #ff846a,0px -1px 0px #ff846a,1px 0px 0px #ff846a,-1px 0px 0px #ff846a;
+}
+
+ul.products-filter li a.active{
+    background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    color:#fff;
+    position:relative;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    transition: all .5s linear;
+    transition:color 0ms linear;
+}
+
+ul.products-filter li a.active:after{
+    border: 8px solid transparent;
+    border-top: 8px solid #ff3f64;
+    content: '';
+    display: block;
+    width: 1px;
+    position: absolute;
+    bottom: -15px;
+    left:50%;
+    margin-left:-8px;
+}
+
+ul.products-filter li a.active:hover{
+    border:1px solid #dedede;
+    box-shadow:none;
+}
+
+.products-nav{
+    text-align:center;
+    margin-bottom:65px;
+    color:#3e3e3e;
+    font-size:17px;
+    font-family:'LucidaI';
+    letter-spacing:-1px;
+}
+
+.products-nav a{
+    font-family:'LucidaIB';
+    font-size:20px;
+    color:#ff4364;
+}
+
+.products-nav a:hover{
+    text-decoration:none;
+}
+
+/** PRODUCTS ITEMS **/
+
+.products-item-fix{
+    width:33.33%;
+    float:left;
+    padding:0 20px;
+    margin-bottom:50px;
+}
+
+.products-item{
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.2);
+    -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+    overflow:hidden;
+position:relative;
+}
+
+.products-item .prod-image{
+    background-position: center;
+    background-size: cover;
+    position:relative;
+}
+
+.products-item .prod-image img{
+width:100%;
+height:224px;
+display:block;
+-moz-border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -khtml-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.prod-desc{
+    padding:25px;
+}
+
+.prod-sale{
+    background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    display:inline-block;
+    width:69px;
+    height:69px;
+    border-radius:50%;
+    line-height:73px;
+    text-align:center;
+    color:#fff;
+    font-family:'BebasB';
+    font-size:30px;
+    position: absolute;
+    top: 5px;
+    left: 230px;
+}
+
+.prod-gift{
+    background:#8f40ae;
+    border-radius:0 10px 0 26px;
+    position:absolute;
+    right:0;
+    top:0;
+    max-width:84px;
+    padding:8px;
+    text-align:center;
+    color:#fff;
+}
+
+.prod-gift-bold{
+    font-family:'ArialB';
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+.prod-gift{
+    font-size:13.5px;
+}
+
+.prod-gift-bold{
+    border-bottom:1px solid #fff;
+    padding-bottom:3px;
+    margin-bottom:3px;
+}
+
+.prod-title{
+    font-family:'BebasB';
+    color:#1f2025;
+    font-size:18px;
+    margin-bottom:19px;
+    white-space: nowrap;
+}
+
+.prod-title h3{
+font-size:inherit;
+display:inline-block;
+margin:0;
+font-weight:inherit;
+
+}
+
+.prod-title .rating{
+    float:right;
+}
+
+.prod-title .rating img{
+    vertical-align:middle;
+}
+
+.prod-info .prod-info-item{
+    font-family:'Bebas';
+    font-size:19px;
+    color:#959595;
+    margin-bottom:12px;
+}
+
+.prod-info .prod-info-item:last-child{
+    margin-bottom:0px;
+}
+
+.prod-info .prod-info-item span.weightbold{
+    font-family:'ArialB';
+    color:#000000;
+    font-size:15px;
+    min-width:80px;
+    display:inline-block;
+}
+
+.prod-info .prod-info-item span.old-price, .prod-info .prod-info-item span.old-price a{
+    color:#1f2025;
+    text-decoration:line-through;
+    padding-right:8px;
+}
+
+.prod-info .prod-info-item span.new-price, .prod-info .prod-info-item span.new-price a{
+    font-size:27px;
+    color:#ff4164;
+    font-family:'BebasB';
+}
+
+.prod-info .prod-info-item span.new-price .fa{
+
+    font-size:15px;
+    padding-left:5px;
+}
+
+.prod-buttons, .prod-buttons-s{
+    margin-top:33px;
+}
+
+.prod-buttons .item:first-child a{
+position:relative;
+z-index:20;
+}
+
+.prod-buttons .item:first-child a, .prod-buttons-s a{
+    background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px;
+    padding:10px 23px;
+    display:inline-block;
+    font-family:'Bebas';
+    font-size:19px;
+    letter-spacing:1.5px;
+    box-shadow: 0 3px 6px 0 rgb(216, 53, 76);
+}
+
+
+.prod-buttons .item:first-child a .fa, .prod-buttons-s a .fa{
+    padding-right:7px;
+}
+
+.prod-buttons .item{
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#formOrderOneClick{
+	position:absolute;
+}
+
+.prod-buttons .item:nth-child(2) a{
+    display:inline-block;
+    font-size:17px;
+    text-decoration:none;
+    color:#505050;
+    margin-left:13px;
+}
+
+
+.prod-buttons .item:first-child a:hover, .prod-buttons-s a:hover{
+    background-image: linear-gradient(180deg, #ff3f64 0%, #ff3f64 100%);
+}
+
+.prod-buttons .item:nth-child(2) a:hover{
+    color:#000;
+}
+
+/** NAV FIX **/
+
+.nav-fix .products-nav{
+    margin:0;
+}
+
+.nav-fix ul.products-filter{
+    margin:0;
+    margin-top:65px;
+}
+
+.nav-fix ul.products-filter li a{
+    border-radius:10px;
+}
+
+.nav-fix ul.products-filter li a.active:after{
+    border-top: 0px;
+    border-bottom: 8px solid #ff8369;
+    bottom: inherit;
+    top: -8px;
+}
+
+.nav-fix ul.products-filter li a.active:hover:after{
+    border-bottom:8px solid #ff3f64;
+}
+
+/* ---------------------- END PRODUCTS ---------------------- */
+
+/* ---------------------- STYLE AND REVIEWS ---------------------- */
+
+/** STYLE **/
+.satin-box-background{
+    background-image:url(../images/background2.jpg)/*tpa=http://glavpostel.biz/images/background2.jpg*/;
+    position:relative;
+}
+
+.satin-box-background:before{
+    content:'';
+    background:url(../images/shape1.png)/*tpa=http://glavpostel.biz/images/shape1.png*/repeat;
+    width:100%;
+    height:32px;
+    position:absolute;
+    top:-12px;
+}
+
+.satin-box-background:after{
+    content:'';
+    background:url(../images/shape1.png)/*tpa=http://glavpostel.biz/images/shape1.png*/repeat;
+    width:100%;
+    height:32px;
+    position:absolute;
+    bottom:-12px;
+}
+
+.satin-fix{
+    padding:50px 0;
+}
+
+.box-title{
+    font-size:30px;
+    font-family:'LucidaIB';
+    letter-spacing:-2px;
+    text-align:center;
+}
+
+.satin-box-items .satin-box-item{
+    width:33.33%;
+    float:left;
+    display:table;
+    padding:0 50px;
+}
+
+.satin-box-items .satin-box-item:first-child{
+    padding-left:0;
+}
+
+.satin-box-items .satin-box-item:last-child{
+    padding-right:0;
+}
+
+.satin-box-items .satin-box-item .ico-fix{
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.satin-box-items .satin-box-item .ico{
+    background:url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/;
+    width:84px;
+    height:84px;
+    line-height:84px;
+    text-align:center;
+    font-size:24px;
+}
+
+.satin-box-items .satin-box-item .text{
+    display:table-cell;
+    vertical-align:middle;
+    padding-left:30px;
+    font-family:'LucidaI';
+    font-size:16px;
+    letter-spacing:-1px;
+}
+
+.satin-box-items .satin-box-item .text b{
+    font-family:'LucidaIB';
+}
+
+.satin-box .satin-box-items{
+    margin-bottom:70px;
+}
+
+.satin-box .satin-box-items:last-child{
+    margin-bottom:0;
+}
+
+.satin-box .box-title{
+    margin-bottom:80px;
+}
+
+/** END STYLE **/
+
+
+/** REVIEWS **/
+
+.satin-reviews{
+    padding-top:110px;
+}
+
+.satin-reviews .box-title{
+    margin-bottom:50px;
+}
+
+.satin-reviews .reviews-item-fix{
+    width:33.33%;
+    padding:0 15px;
+    float:left;
+}
+
+.satin-reviews .reviews-item{
+
+    position:relative;
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-size:cover;
+    display:table;
+}
+
+.satin-reviews .reviews-item:after{
+    padding-bottom:65%;
+    content:'';
+    display:block;
+}
+
+.reviews-fix{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 4;
+}
+
+.satin-reviews .reviews-item a{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(102,102,102,0.2);
+    color:#fff;
+    text-align:center;
+    text-decoration:none;
+    font-size:54px;
+    display:table;
+}
+
+.satin-reviews .reviews-item a:after{
+    content:'';
+    color:#fff;
+}
+
+.reviews-item a .fa{
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.satin-reviews .reviews-item a:hover{
+    background:rgba(102,102,102,0);
+}
+
+/** END REVIEWS **/
+
+/* ---------------------- END STYLE AND REVIEWS ---------------------- */
+
+/* ---------------------- CERTIFICATES ---------------------- */
+
+.satin-cert{
+    padding:60px 0;
+    text-align:center;
+}
+
+.satin-cert .box-title{
+    margin-bottom:55px;
+}
+
+.cert-items{
+    display: table;
+    width: 100%;
+}
+
+.cert-items .cert-item{
+    padding: 0 50px;
+    width: 33.33%;
+    display: inline-block;
+}
+
+.cert-items .cert-item img{
+    width:180px;
+    vertical-align:middle;
+}
+
+.cert-item img{
+    box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+    border-radius:10px;
+}
+
+/* ---------------------- END CERTIFICATES ---------------------- */
+
+/* ---------------------- HOW WORK ---------------------- */
+
+.satin-work{
+    background:#fafafa;
+    padding:50px 0;
+}
+
+.satin-work .box-title{
+    margin-bottom:60px;
+}
+
+.work-items{
+    display:table;
+width:100%;
+}
+
+.work-items .work-item{
+    width:25%;
+    display:table-cell;
+    vertical-align:top;
+    text-align:center;
+    padding:0 20px;
+    position:relative;
+}
+
+.work-items .work-item:after{
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: "\f061";
+    color: #0b0b0b;
+    font-size: 14px;
+    top: 45%;
+    margin-top: -9px;
+    right: -10px;
+}
+
+.work-items .work-item:last-child:after{
+    display:none;
+}
+
+.work-items .work-item .ico{
+    background:url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/no-repeat;
+    width:60px;
+    height:60px;
+    margin:0 auto;
+}
+
+.work-items .work-item .ico.one{
+    background-position: 0 -86px;
+}
+
+.work-items .work-item .ico.two{
+    background-position: -60px -86px;
+}
+
+.work-items .work-item .ico.three{
+    background-position: -120px -86px;
+}
+
+.work-items .work-item .ico.four{
+    background-position: -181px -86px;
+}
+
+.work-items .work-item .title{
+    font-family:'BebasB';
+    font-size:24px;
+    text-transform:uppercase;
+    margin-top:15px;
+}
+
+.work-items .work-item .description{
+    font-size:18px;
+    color:#2f2f2f;
+    margin-top:15px;
+}
+
+.work-box-fix{
+    text-align:center;
+    margin-top:65px;
+}
+
+.work-box{
+    background:rgba(255,255,255,0.8);
+    display:inline-block;
+    padding:30px;
+    text-align:center;
+}
+
+.work-box .title{
+    color:#1f2025;
+    font-size:20px;
+    font-family:'LucidaIB';
+    letter-spacing:-1px;
+}
+
+.work-box .button a{
+    background:#8f40ae;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    padding:10px 20px;
+    font-family:'Bebas';
+    letter-spacing:2px;
+    display:inline-block;
+    margin-top:35px;
+    font-size:19px;
+}
+
+.work-box .button a .fa{
+    padding-right:10px;
+}
+
+.work-box .button a:hover{
+    background:#ad4fd2;
+}
+
+/* ---------------------- END HOW WORK ---------------------- */
+
+/* ---------------------- INTRO ---------------------- */
+
+.satin-intro{
+    padding:50px 0;
+    text-align:center;
+}
+
+.satin-intro .box-title{
+    margin-bottom:40px;
+}
+
+.satin-intro .description{
+    font-size:17px;
+    color:#6c6c6c;
+    width:49%;
+    margin:0 auto;
+}
+
+/* ---------------------- END INTRO ---------------------- */
+
+/* ---------------------- IMAGES ---------------------- */
+
+.satin-images{
+
+}
+
+.satin-images .images-item{
+    width:12.5%;
+    float:left;
+    background-size:cover;   
+}
+
+.satin-images .images-item:after{
+    content:'';
+    padding-bottom:85%;
+    display:block;
+}
+
+/* ---------------------- END IMAGES ---------------------- */
+
+footer{
+    background:#8f40ae;
+    padding:20px 0;
+    text-align:center;
+    color:#fff;
+}
+
+.footer-info{
+
+}
+
+.footer-logo{
+    margin-bottom:20px;
+}
+
+.footer-logo .ico{
+    width:47px;
+    height:31px;
+    background:url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/;
+    background-position:-124px 0;
+    margin:0 auto;
+}
+
+.footer-logo .text{
+    font-family:'LucidaIB';
+    font-size:20px;
+    letter-spacing:-1px;
+    margin-top:7px;
+}
+
+.footer-link{
+    margin-top:30px;
+}
+
+.footer-link .item{
+    display:inline-block;
+    padding:0 15px;
+    font-size:17px;
+}
+
+.footer-link .item:first-child{
+    padding-left:0;
+}
+
+.footer-link .item:last-child{
+    padding-right:0;
+}
+
+.footer-link .item a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.footer-link .item a:hover{
+    text-decoration:underline;
+}
+
+#Container{
+    overflow:hidden;
+    padding-bottom:20px;
+}
+
+#Container .mix, #Containera .mix{
+    display:none;
+}
+
+.fix{
+    display:table;
+    width:100%;
+}
+
+
+/** Button to top **/
+
+#gotop{
+    background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    width:50px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    color:#fff;
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    border-radius:10px;
+    cursor:pointer;
+    display:none;
+z-index:100;
+}
+
+#gotop:after{
+    content: "\f062";
+    display:inline-block;
+    font-family:'FontAwesome';
+    font-size:18px;
+}
+
+#gotop:hover{
+    background-image: linear-gradient(180deg, #ff3f64 0%, #ff3f64 100%);
+}
+
+.order-box{
+    display:table;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.order-box .order-image{
+    width:60%;
+    vertical-align:top;
+    display:table-cell;
+    background-size:cover;
+    background-position:center;
+}
+
+.order-box .order-info{
+    width:40%;
+    vertical-align:top;
+    display:table-cell;
+}
+
+.order-box .prod-info.fixing{
+    display:inline-block;
+    padding-bottom:20px;
+    border-bottom:1px dashed #e7e7e7;
+    margin-bottom:20px;
+}
+
+.order-box .prod-info .prod-info-item span.weightbold{
+    min-width:120px;
+}
+
+.order-box .prod-desc{
+    padding:20px;
+    background:#fff;
+}
+
+.callback{
+    background-image:url(../images/background.jpg)/*tpa=http://glavpostel.biz/images/background.jpg*/;
+    background-size:cover;
+    background-position: -370px;
+    padding:25px 18px;
+    text-align:center;
+}
+
+.callback .title{
+    font-family:'LucidaIB';
+    font-size:20px;
+    letter-spacing:-1px;
+    color:#1f2025;
+    margin-bottom:20px;
+}
+
+.callback .form input[type="text"]{
+    background:#ffffff;
+    border-radius:100px;
+    padding:12px 20px;
+    width:100%;
+    border:1px solid #dedede;
+    outline:none;
+    font-family:'ArialB';
+    font-size:17px;
+    color:#393939;
+    margin-bottom:20px;
+}
+
+.callback .form input[type="text"]:focus{
+    border: 1px solid #ff846a;
+    box-shadow: 0px 1px 0px #ff846a,0px -1px 0px #ff846a,1px 0px 0px #ff846a,-1px 0px 0px #ff846a;
+}
+
+.callback .form input[type="text"].error{
+	border: 1px solid #ff846a;
+}
+
+::-webkit-input-placeholder{
+    font-family:'ArialNarrow';
+    color:#6c6c6c;
+}
+
+.callback .form button{
+    background: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: inline-block;
+    color: #fff;
+    font-family: 'Bebas';
+    letter-spacing: 2px;
+    font-size: 18px;
+    text-decoration: none;
+    border:none;
+    cursor:pointer;
+}
+
+.callback .form button .fa{
+    padding-right:7px;
+}
+
+.callback .form button:hover{
+    background: linear-gradient(180deg, #ff3f64 0%, #ff3f64 100%);
+}
+
+.box_oder_image{
+    background-image:url(../images/background.jpg)/*tpa=http://glavpostel.biz/images/background.jpg*/;
+    background-size:cover;
+    vertical-align:bottom;
+}
+
+.box_order-logo{
+    margin-bottom:20px;
+}
+
+.box_order-logo .ico{
+    width: 47px;
+    height: 31px;
+    background: url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/;
+    background-position: -124px 0;
+    display:inline-block;
+}
+
+.box_order-logo .text{
+    font-family: 'LucidaIB';
+    font-size: 20px;
+    letter-spacing: -1px;
+    display:inline-block;
+    color:#fff;
+    padding-left:5px;
+}
+
+.order .home-info-box{
+    color:#fff;
+    max-width:430px;
+    margin-bottom:20px;
+}
+
+.order .home-info-box .title{
+    font-size:26px;
+	line-height:35px;
+}
+
+.box_order_line{
+    background-image: linear-gradient(180deg, rgba(167, 48, 213, 0.9) 0%, rgba(143, 64, 174, 0.9) 100%);
+    padding:15px 20px;
+    color:#fff;
+    display:table;
+    width:100%;
+}
+
+.box_order_line .ico{
+    background: url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/no-repeat;
+    background-position: -181px 0;
+    width: 56px;
+    height: 56px;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.box_order_line .text{
+    display:table-cell;
+    vertical-align:middle;
+    padding-left:30px;
+}
+
+.box_order_line .text .item:first-child{
+    font-family: 'BebasB';
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.box_order_line .text .item:nth-child(2){
+    font-size: 17px;
+    font-family: 'ArialB';
+    margin-top: 5px;
+    letter-spacing: 0.1px;
+}
+
+.order{
+    width:870px;
+    display:table;
+}
+
+.box_oder_image{
+    width:60%;
+    display:table-cell;
+}
+
+.box_order_info{
+    background:#fff;
+    display:table-cell;
+    padding:15px 25px;
+    width:40%;
+}
+
+.box_order_title{
+    letter-spacing:1px;
+    font-family:'BebasB';
+    color:#1f2025;
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.box_order_img .img{
+    width:95px;
+	height:95px;
+    border-radius:10px;
+    background:#b6b6b6;
+    float:left;
+    margin-right:12px;
+    background-size:cover;
+	overflow:hidden;
+    background-position:center;
+}
+
+.box_order_img .img img{
+	display:block;
+	width:100% !important;
+}
+
+.box_order_img .info{
+    overflow:hidden;
+}
+
+.box_order_img .info .name {
+    font-family: 'ArialB';
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #7b7b7b;
+}
+
+.box_order_img .info .btext{
+    font-size:15px;
+    font-family:'ArialB';
+    color:#000;
+}
+
+.box_order_img .info .price{
+    margin-top:4px;
+}
+
+.box_order_img .info .price span.gray{
+    font-size:19px;
+    font-family:'Bebas';
+    color:#9a9a9a;
+    padding-right:7px;
+}
+
+.box_order_img .info .price span:nth-child(2){
+    color:#ff4364;
+    font-size:27px;
+    font-family:'BebasB';
+}
+
+.box_order_img .info .price span:nth-child(2) .small{
+    font-size:15px;
+    font-family:'ArialB';
+}
+
+.box_order_img .form input[type="text"], .box_order_img .form input[type="tel"]{
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 12px 20px;
+    width: 100%;
+    border: 1px solid #dedede;
+    outline: none;
+    font-family: 'ArialB';
+    font-size: 17px;
+    color: #393939;
+    margin-bottom: 20px;
+}
+
+.box_order_img .form input[type="text"].error, .box_order_img .form input[type="tel"].error{
+	box-shadow: 0px 1px 0px #ff846a,0px -1px 0px #ff846a,1px 0px 0px #ff846a,-1px 0px 0px #ff846a;
+}
+
+.box_order_img .form button{
+    background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 23px;
+    display: inline-block;
+    font-family: 'Bebas';
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 3px 6px 0 rgb(216, 53, 76);
+    outline:none;
+    border:none;
+    cursor:pointer;
+}
+
+.box_order_img .form{
+    margin-top:30px;
+}
+
+.box_order_img .form button:hover{
+    background: linear-gradient(180deg, #ff3f64 0%, #ff3f64 100%);
+}
+
+.box_order_img .form button .fa{
+    padding-right:7px;
+}
+
+.box_order_fix{
+    padding:20px;
+}
+
+/* s */
+
+.header-box-glob{
+    background:#9746b6;
+    padding:10px 0;
+    display:none;
+}
+
+.header-box-glob .logotype{
+    float:left;
+}
+
+.header-box-glob .logotype .ico{
+    width: 47px;
+    height: 31px;
+    background: url(../images/sprite.png)/*tpa=http://glavpostel.biz/images/sprite.png*/;
+    background-position: -124px 0;
+    display:inline-block;
+    vertical-align:bottom;
+}
+
+.header-box-glob .logotype .text{
+    font-family: 'LucidaIB';
+    font-size:16px;
+    letter-spacing: -1px;
+    display:inline-block;
+    vertical-align:bottom;
+    padding-left:10px;
+}
+
+.header-box-glob .number{
+    float:right;
+    font-family: 'Number';
+    font-size:20px;
+    padding-top:5px;
+}
+
+.header-box-glob .number a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.dt:after{
+    display:table;
+    width:100%;
+    content:'';
+}
+
+.header-box-glob.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    right: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    opacity:0.9;
+}
+
+.header-box-glob.fixed:hover{
+    opacity:1;
+}
+
+.mobile-items{
+    display:none;
+}
+
+.ico-mobile{
+    text-align: center;
+    margin-top: -20px;
+    display:none;
+}
+
+.products-items .page-title, .products-items .page-description, .products-items .woocommerce-result-count,.products-items .woocommerce-ordering{
+display:none;
+}
+
+.popup .home-info-box{
+color:#fff;
+}
+
+.popup .home-info-box .title{
+line-height:39px;
+font-size:30px;
+}
+
+#order_suc .box_order_info{
+    vertical-align:middle;
+    text-align:center;
+}
+
+.box_order_suc{
+    padding:20px;
+}
+
+.box_order_suc .title{
+    color:#1f2025;
+    font-size:24px;
+    margin-bottom:25px;
+    font-family:'BebasB';
+}
+
+.box_order_suc .text{
+    color:#9a9a9a;
+    text-transform:uppercase;
+    font-family:'Bebas';
+    font-size:18px;
+    letter-spacing:0.5px;
+    margin-bottom:35px;
+    line-height:30px;
+}
+
+.box_order_suc .number{
+    font-size:27px;
+    color:#ff4364;
+    font-family:'BebasB';
+    position:relative;
+    display:inline-block;
+}
+
+.box_order_suc .number:after{
+    width:47px;
+    height:3px;
+    background:#e1e1e1;
+    content:'';
+    position:absolute;
+    top:50%;
+    margin-top:-1.5px;
+    left:-57px;
+}
+
+.box_order_suc .number:before{
+    width:47px;
+    height:3px;
+    background:#e1e1e1;
+    content:'';
+    position:absolute;
+    top:50%;
+    margin-top:-1.5px;
+    right:-57px;
+}
+
+#formOrderOneClick .popup{
+
+}
+
+.callback{
+width:303px;
+}
+
+.suc_info{
+	padding:40px;
+background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    display: inline-block;
+    border-radius: 0 0 97px 0px;
+color:#fff;
+font-family: 'LucidaIB';
+font-size:17px;
+line-height:30px;
+letter-spacing:-1px;
+}
+
+ul.products{
+	margin:0;
+	padding:0;
+}
+
+.modal-page{
+padding:50px 0;
+    font-size: 18px;
+    color: #2f2f2f;
+    margin-top: 15px;
+}
+
+.modal-page .title{
+    font-size: 30px;
+    font-family: 'LucidaIB';
+    letter-spacing: -2px;
+    text-align: center;
+	margin-bottom:60px;
+}
+
+.modal-page #clos{
+	background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+		display:none;
+}
+
+.politik-on #clos{
+	display:block;
+}
+
+.oferta-on #clos{
+	display:block;
+}
+
+.modal-page #clos:hover{
+background-image: linear-gradient(180deg, #ff3f64 0%, #ff3f64 100%);
+}
+
+#ordering.none{
+
+}
+
+.full-link{
+position:absolute;
+width:100%;
+height:100%;
+z-index:10;
+}
+
+/** **/
+
+.fixed-button{
+    background: #9533bd;
+    font-family: 'Exo 2', sans-serif;
+    display: inline-block;
+    position: fixed;
+    right: -440px;
+    top: 15%;
+    z-index: 200;
+    border-radius: 0px 0px 0px 50px;
+        display: flex;
+display:-moz-box;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+}
+
+.fixed-button.active{
+    background:#6e278c;
+    right:0px;
+}
+
+.fixed-button .title i.heart{
+    background:url(../images/ico4.png)/*tpa=http://glavpostel.biz/images/ico4.png*/;
+    width:16px;
+    height:18px;
+    display:inline-block;
+    margin-bottom:7px;
+}
+
+.fixed-button .title{
+   -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    font-weight: 300;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 16px 15px;
+    padding-top: 27px;
+    -ms-flex-item-align: center;
+        align-self: center;
+    cursor: pointer;
+}
+
+.fixed-button .content{
+     background-image: -webkit-linear-gradient(top, #a332cf 0%, #8733ad 100%);
+    background-image: linear-gradient(180deg, #a332cf 0%, #8733ad 100%);
+    border-radius: 0 0 0 50px;
+    padding: 12px;
+    padding-right: 45px;
+    color: #fff;
+    width: 440px;
+    display: block;
+    height: 0px;
+    visibility: hidden;
+    -webkit-transition: height 100ms linear;
+    transition: height 100ms linear;
+	position:relative;
+}
+
+.fixed-button .content a.close_fixed_button{
+	width:100%;
+height:100%;
+position:absolute;
+top:0;
+left:0;
+}
+
+.fixed-button.active .content{
+    display:block;
+    height:auto;
+    opacity:1;
+    visibility:visible;
+}
+
+.fixed-button .content .name{
+    font-weight:600;
+    text-align:center;
+    text-transform:uppercase;
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.fixed-button .content .list{
+    font-weight:300;
+    font-size:14px;
+}
+
+.fixed-button .content .list i.heart-gift{
+    background:url(../images/ico5.png)/*tpa=http://glavpostel.biz/images/ico5.png*/;
+    margin-top:4px;
+    width:18px;
+    height:16px;
+    display:block;
+    margin-right:10px;
+    flex:0 0 18px;
+}
+
+.fixed-button .content .list .item{
+    display:flex;
+    margin-bottom:25px;
+}
+
+.tabs{
+    display:flex;
+    justify-content:center;
+    position:relative;
+    font-family: 'Exo 2', sans-serif;
+}
+.tabs > div{
+    padding-top:10px;
+}
+.tabs ul{
+    margin:0px;
+    padding:0px;
+    display:flex;
+    justify-content: center;
+    width:100%;
+}
+.tabs ul li{
+    margin:0px;
+    padding:0px;
+    cursor:pointer;
+    background-image: linear-gradient(180deg, #a332cf 0%, #8c33b2 100%);
+    font-family: 'Exo 2', sans-serif;
+    font-weight:600;
+    font-size:22px;
+    text-transform:uppercase;
+    color:#fff;
+    list-style:none;
+    padding:10px 45px;
+    border-radius:6px;
+    border:2px solid transparent;
+    position:relative;
+}
+.tabs ul li:nth-child(2){
+    margin:0 30px;
+}
+.tabs ul li:after, .tabs ul li:before{
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.tabs ul li:after{
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #8c33b3;
+    border-width: 11px;
+    margin-left: -11px;
+}
+.tabs-content > div{
+    display:none;
+}
+.tabs ul li:before{
+    border-color: rgba(14, 99, 154, 0);
+    border-top-color: #9033b7;
+    border-width: 15px;
+    margin-left: -15px;
+}
+.tabs ul li.active, .tabs ul li.active:hover{
+    background:transparent;
+    background: linear-gradient(#ff8363, #ff3960); 
+    -webkit-background-clip: text;
+    color: transparent;
+    border:2px solid #ff4f61;
+}
+.tabs ul li:hover{
+    background-image: linear-gradient(180deg, #8c33b2 0%, #a332cf 100%);
+    color:#eae7e7;
+}
+
+.tabs ul li:hover:after{
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #a232ce;
+    border-width: 11px;
+    margin-left: -11px;
+}
+
+.tabs ul li:hover:before{
+        border-color: rgba(14, 99, 154, 0);
+    border-top-color: #a232ce;
+    border-width: 15px;
+    margin-left: -15px;
+}
+
+.satin-tabs{
+    margin-top:50px;
+}
+
+.satin-tabs .name{
+    text-align:center;
+    font-family: 'Exo 2', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    margin-bottom:50px;
+}
+
+.tabs ul li.active:before{
+    border-color: rgba(14, 99, 154, 0);
+    border-top-color: #ff4f61;
+    border-width: 15px;
+    margin-left: -15px;
+}
+
+.tabs ul li.active:after{
+        border-color: rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    border-width: 11px;
+    margin-left: -11px;
+}
+
+.tabs-content{
+    position:absolute;
+    background:#fff;
+    border:1px solid #b8b7b7;
+    border-radius:6px;
+    padding:20px;
+    width:80%;
+    top:70px;
+    border-top:15px solid #ff4060;
+    z-index:-1;
+    visibility:hidden;
+    opacity:0;
+left:10%;
+    transition: opacity 100ms linear, top 100ms linear, visibility 100ms linear;
+}
+
+.tabs-content.drop{
+    z-index:10;
+    visibility:visible;
+    opacity:1;
+    top:90px;
+left:10%;
+}
+
+.tabs-content > div .tab-name{
+    font-size:22px;
+    font-weight:600;
+    color:#8933af;
+    border-bottom:1px solid #8933af;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+
+.tabs-content > div .con{
+    display:flex;
+    color:#595959;
+}
+
+.tabs-content > div .con .item{
+    width:65%;
+}
+
+.tabs-content > div .con .item:last-child{
+    width:35%;
+}
+
+.tabs-content > div .con .item:first-child{
+    padding-right:30px;
+}
+
+.tabs-content > div .con .item:first-child p{
+    margin:0;
+    margin-bottom:15px;
+}
+
+.tabs-content > div .con .item:first-child p:last-child{
+    margin-bottom:0;
+}
+
+.tabs-content > div .con .item:last-child .image{
+    background-size:cover;
+    background-position:center;
+}
+
+.tabs-content > div .con .item:last-child .image:after{
+    padding-bottom:65%;
+    content:'';
+    display:block;
+}
+
+.tabs-content > div .con .item:last-child .info{
+        border: 1px solid #bcbbbb;
+    padding: 13px;
+    text-align:center;
+}
+
+.tabs-content > div .con .item:last-child .info b{
+    font-weight:600;
+}
+
+.tabs-content > div:after, .tabs-content > div:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.tabs-content > div:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 6px;
+    margin-left: -6px;
+}
+.tabs-content > div:before {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 12px;
+    margin-left: -12px;
+}
+
+.tabs-content > div:nth-child(1):after, .tabs-content > div:nth-child(1):before{
+    left:18.8%;
+}
+
+.tabs-content > div:nth-child(2):after, .tabs-content > div:nth-child(2):before{
+    left: 48.7%;
+}
+
+.tabs-content > div:nth-child(3):after, .tabs-content > div:nth-child(3):before{
+        left: 79.9%;
+}
+
+.prod-info.select:after{
+    background:url(../images/ico6.png)/*tpa=http://glavpostel.biz/images/ico6.png*/;
+    content:'';
+    width:54px;
+    height:70px;
+    display:block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.prod-info{
+    position:relative;
+}
+
+/* стили блока аккордеон */
+.accordion {
+  width:100%;
+  margin: 0 auto
+}
+/* секции аккордеона */
+.accordion .accordion_item {
+  margin-bottom:1px;
+  position:relative;
+}
+/* заголовки панелей аккордеона */
+.accordion .title_block {
+  font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+  color: #eee;
+  cursor:pointer;
+  background-image: linear-gradient(180deg, #a332cf 0%, #8c33b2 100%);
+  padding:13px 55px 13px 20px;
+  -webkit-transition:all .2s linear 0;
+  -webkit-transition-delay:.2s 0;
+  transition:all .2s linear 0;
+font-family: 'Exo 2', sans-serif;
+}
+/* переключатель панелей, положение вниз */
+.accordion .title_block:before {
+  content:'';
+  height:8px;
+  width:8px;
+  display:block;
+  border:2px solid #fefefe;
+  border-right-width:0;
+  border-top-width:0;
+  -ms-transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+  position:absolute;
+  right:20px;
+  top:18px
+}
+/* активный переключатель, положение вверх */
+.accordion .active_block .title_block:before {
+  border:2px solid #fefefe;
+  border-left-width:0;
+  border-bottom-width:0;
+  top:18px
+}
+.accordion .title_block:hover {
+  background-image: linear-gradient(180deg, #8c33b2 0%, #a332cf 100%);
+}
+ 
+/* заголовок активного блока  */
+.accordion .active_block .title_block {
+      background-image: linear-gradient(180deg, #ff886a 0%, #ff3f64 100%);
+  color:#fefefe
+}
+/* блоки с содержанием */
+.accordion .info {
+  display:none;
+  padding:10px 15px;
+  overflow: hidden;
+  background:#f7f7f7
+}
+/* параграф внутри блоков с содержанием */
+.accordion .info_item {
+  margin-bottom:10px
+}
+/* картинки внутри аккордеона */
+.accordion .info img {
+    height: auto;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.accordion{
+		display:none;
+	}
+
+
+.prod-image__bg{
+    background-position: center; width: 100%; height: 225px; background-size: contain; background-repeat: no-repeat;
+}
+.products-item{
+    overflow: visible;
+}
+.prod-title{
+    font-size: 16px;
+}
