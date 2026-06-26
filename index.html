@@ -61,6 +61,44 @@ document.addEventListener('click', function(e){
   if(a && window.ym){ ym(110150078, 'reachGoal', 'lead_form_open'); }
 });
 </script>
+<!-- AitiBot good_rsy_engaged -->
+<script src="https://aitibot.ru/rsy-mvp/tag.js" data-rsy-key="rsy_f4da13a9a59d4981a6ff3744f1dcb54f" async></script>
+<script>
+/* FORM_INTENT bridge для iframe-формы (xshopcart) и кастомных CTA.
+   Тег ловит FORM_INTENT по фокусу на нативном input/textarea/select.
+   На этом лендинге форма — внешний iframe, фокус в него не всплывает,
+   поэтому при намерении заказать мы фокусируем скрытый нативный input,
+   чтобы штатный markFormIntent тега сработал (ветка A). */
+(function(){
+  function makeProbe(){
+    var inp = document.getElementById('rsy-formintent-probe');
+    if(inp) return inp;
+    inp = document.createElement('input');
+    inp.type='text'; inp.id='rsy-formintent-probe';
+    inp.setAttribute('autocomplete','off'); inp.setAttribute('tabindex','-1'); inp.setAttribute('aria-hidden','true');
+    inp.style.cssText='position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0;pointer-events:none;';
+    document.body.appendChild(inp);
+    return inp;
+  }
+  function fireIntent(){
+    try{ var p=makeProbe(); p.focus(); setTimeout(function(){ try{p.blur();}catch(e){} },50); }catch(e){}
+  }
+  // 1) клики по CTA, открывающим форму заказа
+  document.addEventListener('click', function(e){
+    if(e.target.closest('a[href="#order"], a[href="#callback"], a.cb, #sat_ordering, #sat_order, .lead-iframe-wrap')){
+      fireIntent();
+    }
+  }, true);
+  // 2) фокус ушёл в iframe формы (юзер тыкнул внутрь xshopcart)
+  window.addEventListener('blur', function(){
+    setTimeout(function(){
+      var a=document.activeElement;
+      if(a && a.tagName==='IFRAME' && /xshopcart\.com/.test(a.src||'')) fireIntent();
+    }, 0);
+  });
+})();
+</script>
+<!-- /AitiBot -->
 </head>
 
 <body>
