@@ -1,29 +1,31 @@
-/* ============ ГлавПостель rebuild ============ */
+/* ============ ГлавПостель rebuild v2 ============ */
 
-/* ---- Карточка: галерея 3 фото (стиль WB) ---- */
+/* ---- Карточка: галерея 3 фото (WB) ---- */
 .prod-image{height:auto !important;}
-.pgal{display:flex;gap:6px;height:236px;padding:8px;box-sizing:border-box;position:relative;z-index:6;}
+.pgal{display:flex;gap:6px;height:236px;padding:8px;box-sizing:border-box;position:relative;z-index:14;}
 .pgal__thumbs{display:flex;flex-direction:column;gap:6px;width:60px;flex:0 0 60px;}
 .pgal__thumb{flex:1;min-height:0;background-size:cover;background-position:center;border-radius:6px;cursor:pointer;border:1px solid #e7e7e7;transition:border-color .15s,transform .15s;}
 .pgal__thumb:hover{border-color:#e8730c;transform:translateY(-1px);}
 .pgal__main{flex:1;background-size:cover;background-position:center;border-radius:8px;cursor:zoom-in;border:1px solid #eee;background-color:#fafafa;}
 @media(max-width:768px){.pgal{height:210px;}}
+/* Бейдж –50% поверх всего */
+.prod-sale{z-index:16 !important;}
 
 /* ---- Лайтбокс товара ---- */
 .plx-overlay{position:fixed;inset:0;background:rgba(15,17,21,.80);z-index:99999;display:none;align-items:center;justify-content:center;padding:16px;}
 .plx-overlay.open{display:flex;}
-.plx{background:#fff;border-radius:14px;max-width:880px;width:100%;max-height:92vh;overflow:auto;position:relative;}
+.plx{background:#fff;border-radius:14px;max-width:900px;width:100%;max-height:92vh;overflow:auto;position:relative;}
 .plx-top{display:flex;gap:18px;padding:22px;}
 @media(max-width:680px){.plx-top{flex-direction:column;}}
 .plx-stage{flex:1;min-width:0;}
-.plx-big{width:100%;height:380px;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#f5f5f5;border-radius:10px;}
+.plx-big{width:100%;height:400px;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#f5f5f5;border-radius:10px;}
 .plx-strip{display:flex;gap:8px;margin-top:10px;}
-.plx-strip div{width:66px;height:66px;background-size:cover;background-position:center;border-radius:7px;cursor:pointer;border:2px solid transparent;}
+.plx-strip div{width:70px;height:70px;background-size:cover;background-position:center;border-radius:7px;cursor:pointer;border:2px solid transparent;}
 .plx-strip div.act{border-color:#e8730c;}
-.plx-info{width:290px;flex:0 0 290px;}
+.plx-info{width:300px;flex:0 0 300px;}
 @media(max-width:680px){.plx-info{width:auto;flex:auto;}}
 .plx-art{font-size:13px;color:#8a8a8a;margin-bottom:10px;}
-.plx-h{font-size:21px;font-weight:700;color:#222;margin:0 0 14px;line-height:1.3;}
+.plx-h{font-size:22px;font-weight:700;color:#222;margin:0 0 14px;line-height:1.3;}
 .plx-row{font-size:14px;color:#444;margin:7px 0;}
 .plx-row b{color:#222;}
 .plx-price{margin:18px 0 6px;}
@@ -31,12 +33,26 @@
 .plx-new{color:#e8730c;font-size:28px;font-weight:800;}
 .plx-buy{display:block;text-align:center;background:#e8730c;color:#fff;font-weight:700;font-size:16px;padding:15px;border-radius:10px;text-decoration:none;margin-top:14px;transition:background .15s;}
 .plx-buy:hover{background:#cf6207;}
-.plx-close,.rvm-close{position:absolute;top:12px;right:18px;font-size:32px;cursor:pointer;line-height:1;z-index:3;color:#999;}
-.plx-close{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);}
+.plx-close{position:absolute;top:12px;right:18px;font-size:32px;cursor:pointer;line-height:1;z-index:3;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);}
 
-/* ---- Сетка отзывов ---- */
-.satin-reviews{padding:8px 0 24px;}
-.rv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:10px;}
+/* ---- Сводка + лента отзывов ---- */
+.satin-reviews{padding:8px 0 26px;}
+.rv-summary{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin:6px 0 22px;}
+.rv-score{display:flex;flex-direction:column;align-items:flex-start;min-width:118px;}
+.rv-score .num{font-size:46px;font-weight:800;color:#222;line-height:1;}
+.rv-score .st{color:#f5a623;font-size:18px;margin:6px 0 4px;letter-spacing:2px;}
+.rv-score .cnt{color:#8a8a8a;font-size:13px;}
+.rv-strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;flex:1;min-width:0;}
+.rv-strip::-webkit-scrollbar{height:6px;}
+.rv-strip::-webkit-scrollbar-thumb{background:#ddd;border-radius:3px;}
+.rv-stripit{position:relative;width:92px;height:122px;flex:0 0 92px;border-radius:10px;overflow:hidden;cursor:pointer;background:#f2f2f2;}
+.rv-stripit .ph{width:100%;height:100%;background-size:cover;background-position:center;}
+.rv-stripit video{width:100%;height:100%;object-fit:cover;background:#000;pointer-events:none;}
+.rv-stripit .pl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.rv-stripit .pl:after{content:"";width:0;height:0;border-left:17px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;filter:drop-shadow(0 0 3px rgba(0,0,0,.6));margin-left:3px;}
+
+/* ---- Сетка карточек отзывов ---- */
+.rv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
 @media(max-width:1000px){.rv-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:760px){.rv-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.rv-grid{grid-template-columns:1fr;}}
@@ -45,33 +61,49 @@
 .rv-media{position:relative;height:210px;background:#f2f2f2;}
 .rv-media .ph{width:100%;height:100%;background-size:cover;background-position:center;}
 .rv-media video{width:100%;height:100%;object-fit:contain;display:block;background:#000;}
-.rv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;pointer-events:none;}
-.rv-play:after{content:"";border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px;}
 .rv-badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;padding:3px 9px;border-radius:20px;letter-spacing:.3px;}
 .rv-body{padding:12px 13px 14px;display:flex;flex-direction:column;gap:6px;flex:1;}
 .rv-top{display:flex;justify-content:space-between;align-items:center;}
 .rv-name{font-weight:700;color:#222;font-size:15px;}
 .rv-stars{color:#f5a623;font-size:14px;letter-spacing:1px;}
 .rv-date{color:#9a9a9a;font-size:12px;}
-.rv-text{color:#444;font-size:13px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.rv-pros{color:#444;font-size:13px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.rv-pros b{color:#1f9d55;}
 .rv-more{color:#e8730c;font-size:13px;font-weight:600;margin-top:auto;}
 
-/* ---- Модалка отзыва ---- */
-.rvm-overlay{position:fixed;inset:0;background:rgba(15,17,21,.80);z-index:99999;display:none;align-items:center;justify-content:center;padding:16px;}
+/* ---- Модалка отзыва (WB) ---- */
+.rvm-overlay{position:fixed;inset:0;background:rgba(15,17,21,.82);z-index:100000;display:none;align-items:center;justify-content:center;padding:16px;}
 .rvm-overlay.open{display:flex;}
-.rvm{background:#fff;border-radius:16px;max-width:820px;width:100%;max-height:92vh;overflow:auto;position:relative;}
-.rvm-head{display:flex;align-items:center;gap:12px;padding:22px 24px 8px;}
-.rvm-ava{width:48px;height:48px;border-radius:50%;background:#e8730c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px;flex:0 0 48px;}
+.rvm-box{display:flex;max-width:940px;width:100%;max-height:92vh;background:#fff;border-radius:16px;overflow:hidden;position:relative;}
+@media(max-width:760px){.rvm-box{flex-direction:column;max-height:94vh;overflow:auto;}}
+.rvm-left{flex:1;min-width:0;background:#0f1115;display:flex;align-items:center;justify-content:center;position:relative;}
+@media(max-width:760px){.rvm-left{height:320px;flex:none;}}
+.rvm-stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.rvm-stage .img{width:100%;height:100%;background-size:contain;background-repeat:no-repeat;background-position:center;}
+.rvm-stage video{width:100%;height:100%;object-fit:contain;background:#000;}
+.rvm-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);border:none;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;z-index:2;}
+.rvm-nav.prev{left:12px;}
+.rvm-nav.next{right:12px;}
+.rvm-side{width:370px;flex:0 0 370px;overflow:auto;padding:24px 22px;}
+@media(max-width:760px){.rvm-side{width:auto;flex:auto;}}
+.rvm-h{display:flex;align-items:center;gap:12px;}
+.rvm-ava{width:46px;height:46px;border-radius:50%;background:#e8730c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px;flex:0 0 46px;}
 .rvm-name{font-weight:700;font-size:17px;color:#222;}
 .rvm-sub{font-size:12px;color:#9a9a9a;margin-top:2px;}
-.rvm-stars{color:#f5a623;font-size:17px;margin:0 24px 12px;letter-spacing:2px;}
-.rvm-text{padding:0 24px 16px;color:#333;font-size:15px;line-height:1.6;white-space:pre-line;}
-.rvm-media{display:flex;flex-wrap:wrap;gap:10px;padding:0 24px 18px;}
-.rvm-media .m{width:150px;height:190px;border-radius:10px;background-size:cover;background-position:center;background-color:#f2f2f2;cursor:zoom-in;}
-.rvm-media video{width:210px;height:300px;border-radius:10px;background:#000;object-fit:contain;}
-.rvm-reply{margin:0 24px 24px;background:#f6f7f9;border-left:3px solid #e8730c;border-radius:0 10px 10px 0;padding:13px 15px;}
+.rvm-stars{color:#f5a623;font-size:17px;margin:12px 0 6px;letter-spacing:2px;}
+.rvm-color{display:inline-block;background:#f1f2f4;color:#555;font-size:12px;padding:4px 11px;border-radius:20px;margin-bottom:10px;}
+.rvm-f{margin:11px 0;font-size:14px;line-height:1.55;}
+.rvm-f b{color:#222;display:inline;}
+.rvm-f span{color:#444;}
+.rvm-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px;}
+.rvm-thumbs div{width:58px;height:58px;border-radius:8px;background-size:cover;background-position:center;background-color:#f2f2f2;cursor:pointer;border:2px solid transparent;position:relative;}
+.rvm-thumbs div.act{border-color:#e8730c;}
+.rvm-thumbs div.vid:after{content:"\25b6";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;background:rgba(0,0,0,.35);border-radius:6px;}
+.rvm-reply{margin-top:16px;background:#f6f7f9;border-left:3px solid #e8730c;border-radius:0 10px 10px 0;padding:13px 15px;}
 .rvm-reply b{display:block;color:#e8730c;font-size:13px;margin-bottom:5px;}
 .rvm-reply span{color:#555;font-size:14px;line-height:1.55;}
+.rvm-close{position:absolute;top:10px;right:14px;font-size:30px;line-height:1;cursor:pointer;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);z-index:5;}
+@media(max-width:760px){.rvm-close{color:#333;text-shadow:none;}}
 
 /* ---- Полировка шапки ---- */
 .home-info-box .title{font-size:34px !important;line-height:1.22 !important;}
