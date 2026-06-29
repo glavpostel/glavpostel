@@ -125,6 +125,7 @@ function bg(u){return "background-image:url('"+u+"')";}
 function avg(){var s=0;REVIEWS.forEach(function(r){s+=r.rating;});return s/REVIEWS.length;}
 function plural(n){var a=n%10,b=n%100;if(a===1&&b!==11)return "отзыв";if(a>=2&&a<=4&&(b<10||b>=20))return "отзыва";return "отзывов";}
 function posterOf(it,r){return it.type==="video"?(r.photos[0]||""):it.src;}
+function cap(s){return s?s.charAt(0).toUpperCase()+s.slice(1):s;}
 
 /* ===================== ЛАЙТБОКС ТОВАРА ===================== */
 var plxOv,plxBig,plxStrip,plxImgs,plxIdx;
@@ -229,15 +230,15 @@ function renderG(){
  r.media.forEach(function(it,i){
   thumbs+='<div data-g="'+(r.gStart+i)+'" class="'+(i===localActive?"act ":"")+(it.type==="video"?"vid":"")+'" style="'+bg(posterOf(it,r))+'"></div>';
  });
+ var txt=[r.pros,r.cons,r.comment].filter(Boolean).join(" ");
  var side='<div class="rvm-h"><div class="rvm-ava">'+esc(r.name.charAt(0))+'</div>'+
   '<div><div class="rvm-name">'+esc(r.name)+'</div><div class="rvm-sub">'+esc(r.city)+' \u00b7 '+esc(r.date)+'</div></div></div>'+
   '<div class="rvm-stars">'+stars(r.rating)+'</div>'+
-  (r.color?'<div class="rvm-color">Цвет: '+esc(r.color)+'</div>':'')+
-  (r.pros?'<div class="rvm-f"><b>Достоинства:</b> <span>'+esc(r.pros)+'</span></div>':'')+
-  (r.cons?'<div class="rvm-f"><b>Недостатки:</b> <span>'+esc(r.cons)+'</span></div>':'')+
-  (r.comment?'<div class="rvm-f"><b>Комментарий:</b> <span>'+esc(r.comment)+'</span></div>':'')+
+  '<div class="rvm-objtitle">Комплект «Сатин» \u00b7 '+esc(cap(r.color))+'</div>'+
+  '<p class="rvm-text">'+esc(txt)+'</p>'+
+  (r.media.length>1?'<div class="rvm-thumbs-label">Ещё фото отзыва</div>':'')+
   '<div class="rvm-thumbs">'+thumbs+'</div>'+
-  '<div class="rvm-reply"><b>Ответ продавца</b><span>'+esc(r.reply)+'</span></div>'+
+  '<div class="rvm-reply"><b>Ответ продавца</b>'+esc(r.reply)+'</div>'+
   '<a href="#order" class="rvm-cta" id="rvmCta">Заказать со скидкой ‒50% <span class="ar">\u203a</span></a>';
  var sd=rvmOv.querySelector("#rvmSide");
  sd.innerHTML=side;

@@ -1,4 +1,4 @@
-/* ============ ГлавПостель rebuild v4 ============ */
+/* ============ ГлавПостель rebuild v5 ============ */
 
 /* ---- Карточка товара: галерея 3 фото ---- */
 .prod-image{height:auto !important;}
@@ -50,7 +50,7 @@
 .rv-rate{display:flex;align-items:center;gap:10px;}
 .rv-rate .num{font-size:30px;font-weight:800;color:#222;}
 .rv-rate .stwrap{display:flex;flex-direction:column;}
-.rv-rate .st{color:#f5a623;font-size:18px;letter-spacing:1px;line-height:1;}
+.rv-rate .st{color:#ffb400;font-size:18px;letter-spacing:1px;line-height:1;}
 .rv-rate .cnt{color:#8a8a8a;font-size:13px;margin-top:2px;}
 @media(max-width:768px){.rv-h-title{font-size:22px;}.rv-rate .num{font-size:24px;}}
 
@@ -60,6 +60,7 @@
 .rv-card{
   box-sizing:border-box;
   height:438px;
+  flex-shrink:0;flex-grow:0;
   background:#fff;border:1px solid #ececec;border-radius:14px;overflow:hidden;
   cursor:pointer;display:flex;flex-direction:column;
   box-shadow:0 2px 10px rgba(0,0,0,.04);transition:transform .15s,box-shadow .15s;
@@ -81,7 +82,7 @@
 .rv-top{display:flex;justify-content:space-between;align-items:center;}
 .rv-name{font-weight:700;color:#222;font-size:15px;}
 .rv-date{color:#9a9a9a;font-size:12px;}
-.rv-stars{color:#f5a623;font-size:14px;letter-spacing:1px;}
+.rv-stars{color:#ffb400;font-size:14px;letter-spacing:1px;}
 .rv-pros{color:#444;font-size:13px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
 .rv-pros b{color:#1f9d55;font-weight:600;}
 
@@ -96,44 +97,43 @@
 .rv-page:hover{border-color:#e8730c;color:#e8730c;}
 .rv-page.act{background:#e8730c;border-color:#e8730c;color:#fff;font-weight:700;}
 
-/* ---- Модалка отзыва (svoyprorab) ---- */
-.rvm-overlay{position:fixed;inset:0;background:rgba(15,17,21,.85);z-index:100000;display:none;align-items:center;justify-content:center;padding:16px;}
+/* ============ МОДАЛКА ОТЗЫВА (1-в-1 как svoyprorab) ============ */
+.rvm-overlay{position:fixed;inset:0;background:rgba(20,22,28,.55);z-index:100000;display:none;align-items:center;justify-content:center;padding:20px;}
 .rvm-overlay.open{display:flex;}
-.rvm-box{display:flex;max-width:1000px;width:100%;height:600px;max-height:92vh;background:#fff;border-radius:16px;overflow:hidden;position:relative;}
+.rvm-box{display:flex;width:96vw;max-width:1180px;height:88vh;max-height:780px;background:#fff;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 20px 70px rgba(0,0,0,.35);}
 @media(max-width:760px){.rvm-box{flex-direction:column;height:auto;max-height:94vh;overflow:auto;}}
-.rvm-left{flex:1;min-width:0;background:#0f1115;display:flex;align-items:center;justify-content:center;position:relative;}
-@media(max-width:760px){.rvm-left{height:320px;flex:none;}}
+.rvm-left{flex:1;min-width:0;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;padding:54px 64px;box-sizing:border-box;}
+@media(max-width:760px){.rvm-left{height:340px;flex:none;padding:40px 18px;}}
 .rvm-stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 .rvm-stage .img{width:100%;height:100%;background-size:contain;background-repeat:no-repeat;background-position:center;}
-.rvm-stage video{width:100%;height:100%;object-fit:contain;background:#000;}
-.rvm-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);border:none;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;z-index:2;}
+.rvm-stage video{max-width:100%;max-height:100%;width:auto;height:100%;object-fit:contain;background:#000;border-radius:6px;}
+.rvm-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid #e6e6e6;box-shadow:0 2px 12px rgba(0,0,0,.12);font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;z-index:2;}
 .rvm-nav.prev{left:14px;}
 .rvm-nav.next{right:14px;}
-.rvm-back{position:absolute;top:14px;left:16px;color:#fff;font-size:13px;opacity:.9;z-index:3;background:rgba(0,0,0,.3);padding:6px 12px;border-radius:20px;cursor:pointer;}
-.rvm-count{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);color:#fff;font-size:13px;background:rgba(0,0,0,.45);padding:5px 13px;border-radius:20px;z-index:3;}
-.rvm-side{width:380px;flex:0 0 380px;overflow:auto;padding:24px 22px;display:flex;flex-direction:column;}
-@media(max-width:760px){.rvm-side{width:auto;flex:auto;}}
+.rvm-back{position:absolute;top:16px;left:18px;color:#333;font-size:14px;z-index:3;cursor:pointer;opacity:.85;}
+.rvm-back:hover{opacity:1;}
+.rvm-count{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:#444;font-size:13px;background:#f0f1f3;padding:5px 14px;border-radius:20px;z-index:3;}
+.rvm-side{width:392px;flex:0 0 392px;border-left:1px solid #eee;overflow:auto;padding:26px 24px;display:flex;flex-direction:column;}
+@media(max-width:760px){.rvm-side{width:auto;flex:auto;border-left:none;border-top:1px solid #eee;}}
 .rvm-h{display:flex;align-items:center;gap:12px;}
-.rvm-ava{width:46px;height:46px;border-radius:50%;background:#e8730c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px;flex:0 0 46px;}
+.rvm-ava{width:46px;height:46px;border-radius:50%;background:#eef0f3;color:#5a6172;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px;flex:0 0 46px;}
 .rvm-name{font-weight:700;font-size:17px;color:#222;}
 .rvm-sub{font-size:12px;color:#9a9a9a;margin-top:2px;}
-.rvm-stars{color:#f5a623;font-size:17px;margin:12px 0 6px;letter-spacing:2px;}
-.rvm-color{display:inline-block;background:#f1f2f4;color:#555;font-size:12px;padding:4px 11px;border-radius:20px;margin-bottom:8px;align-self:flex-start;}
-.rvm-f{margin:9px 0;font-size:14px;line-height:1.55;}
-.rvm-f b{color:#222;}
-.rvm-f span{color:#444;}
-.rvm-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px;}
-.rvm-thumbs div{width:56px;height:56px;border-radius:8px;background-size:cover;background-position:center;background-color:#f2f2f2;cursor:pointer;border:2px solid transparent;position:relative;}
+.rvm-stars{color:#ffb400;font-size:17px;margin:14px 0 8px;letter-spacing:2px;}
+.rvm-objtitle{font-weight:700;font-size:18px;color:#222;margin:2px 0 10px;}
+.rvm-text{font-size:14px;line-height:1.6;color:#444;margin:0;}
+.rvm-thumbs-label{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:#9a9a9a;margin:18px 0 8px;}
+.rvm-thumbs{display:flex;gap:8px;flex-wrap:wrap;}
+.rvm-thumbs div{width:58px;height:58px;border-radius:8px;background-size:cover;background-position:center;background-color:#f2f2f2;cursor:pointer;border:2px solid transparent;position:relative;}
 .rvm-thumbs div.act{border-color:#e8730c;}
 .rvm-thumbs div.vid:after{content:"\25b6";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;background:rgba(0,0,0,.35);border-radius:6px;}
-.rvm-reply{margin-top:14px;background:#f6f7f9;border-left:3px solid #e8730c;border-radius:0 10px 10px 0;padding:13px 15px;}
-.rvm-reply b{display:block;color:#e8730c;font-size:13px;margin-bottom:5px;}
-.rvm-reply span{color:#555;font-size:14px;line-height:1.55;}
-.rvm-cta{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:16px;background:#f7b500;color:#1f2430;font-weight:700;font-size:15px;padding:16px;border-radius:10px;text-decoration:none;transition:background .15s;}
+.rvm-reply{margin-top:16px;background:#f4f5f7;border-radius:12px;padding:14px 16px;color:#555;font-size:14px;line-height:1.55;}
+.rvm-reply b{display:block;color:#7a8089;font-size:12px;font-weight:600;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px;}
+.rvm-cta{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:auto;background:#f7b500;color:#1f2430;font-weight:700;font-size:15px;padding:16px;border-radius:10px;text-decoration:none;transition:background .15s;}
 .rvm-cta:hover{background:#e8a900;}
 .rvm-cta .ar{font-size:18px;}
-.rvm-close{position:absolute;top:10px;right:14px;font-size:30px;line-height:1;cursor:pointer;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);z-index:5;}
-@media(max-width:760px){.rvm-close{color:#333;text-shadow:none;}}
+.rvm-close{position:absolute;top:14px;right:18px;font-size:28px;line-height:1;cursor:pointer;color:#555;z-index:5;}
+.rvm-close:hover{color:#111;}
 
 /* ---- Полировка шапки ---- */
 .home-info-box .title{font-size:34px !important;line-height:1.22 !important;}
