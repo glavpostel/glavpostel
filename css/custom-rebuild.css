@@ -221,3 +221,9 @@
 .mobile-items .cert-item{display:inline-block !important;width:44% !important;max-width:240px;padding:0 6px !important;margin:0 4px;vertical-align:top;float:none !important;}
 .mobile-items .cert-item img{width:100% !important;height:auto !important;border-radius:10px;}
 }
+
+/* mobile: kill leftover aspect-ratio spacer that breaks product gallery */
+@media(max-width:768px){
+.products-item .prod-image:after{display:none !important;padding-bottom:0 !important;}
+.pgal{height:260px !important;}
+}
