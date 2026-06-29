@@ -1,0 +1,162 @@
+                        <div class="ico three"></div>
+                        <div class="title">3. Мы Вам отправляем заказ</div>
+                        <div class="description">Наш курьер бережно упакует и отправит Ваш заказ. Мы работаем с самой быстрой курьерской службой - СДЕК, это позволяет сократить срок доставки до 5-10 дней. Для маленьких удалённых городов действует доставка Почтой России.</div>
+                    </div>
+                    <div class="work-item">
+                        <div class="ico four"></div>
+                        <div class="title">4. Оплата при получении</div>
+                        <div class="description">Когда заказ приходит в Ваш город, наш менеджер позвонит Вам и предупредит, что заказ прибыл в пункт выдачи. Вы получаете и только после этого оплачиваете свой заказ. Приятных покупок в нашем интернет магазине!</div>
+                    </div>
+                </div>
+                <div class="work-box-fix">
+                    <div class="work-box">
+                        <div class="title">Есть вопросы? Оставьте телефон, мы Вам перезвоним!</div>
+                        <div class="button"><a href="#callback" class="cb"><i class="fa fa-phone"></i>Обратный звонок</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <!--	<div class="satin-intro">
+		<div class="wrapper">
+			<div class="box-title">Наше белье дополнит уют Вашей квартиры!</div>
+			<div class="description">Смело можете оформлять заказ, наши менеджеры Вам перезвонят и проконсультируют по всем оставшимся вопросам. В любой момент Вы можете отказаться от заказа.</div>
+		</div>
+	</div> -->
+    </section>
+    <section>
+        <div class="satin-images clear">
+            <div class="images-item" style="background-image:url(images/image5.jpg);"></div>
+            <div class="images-item" style="background-image:url(images/image6.jpg);"></div>
+            <div class="images-item" style="background-image:url(images/image7.jpg);"></div>
+            <div class="images-item" style="background-image:url(images/image8.jpg);"></div>
+            <div class="images-item" style="background-image:url(images/image9.jpg);"></div>
+            <div class="images-item" style="background-image:url(images/image10.jpg);"></div>
+            <div class="images-item" style="background-image:url(images/image11.jpg);"></div>
+            <div class="images-item" style="background-image:url(images/image12.jpg);"></div>
+        </div>
+    </section>
+    <footer>
+        <div class="wrapper">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <div class="ico"></div>
+                    <div class="text">ГлавПостель</div>
+                </div>
+                <!-- <div class="description">
+				ООО"ГлавПостель", ОГРН 1027700846935,<br/>
+				ИНН 7706275937,юр. адрес: Москва, ул. Пролетарская, 7 
+			</div>	-->
+            </div>
+            <div class="footer-link">
+                <div class="item"><div class="foot_ru_center" style="text-align: center; margin: 0px auto; padding: 30px;">
+<p style="margin:4px 0;">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ВИЛСАН"</p>
+<p style="margin:4px 0;">394033, ВОРОНЕЖСКАЯ ОБЛАСТЬ, Г.О. ГОРОД ВОРОНЕЖ, Г. ВОРОНЕЖ, УЛ. ЗЕМЛЯЧКИ, Д. 21  ОГРН: 1263600006350, ИНН: 3663177696, КПП: 366301001   e-mail: vilsan@mail.ru; skapy: vilsan</p>
+<p class="conf-link doclinks" style="margin:10px 0;">
+  <a class="nav-link" href="policy2.html" target="_blank">Политика конфиденциальности</a>
+</p>
+                </div>
+                </div>
+                <!--	<div class="item"><a href="#politik" id="gpolitik">Политика конфидициальности</a></div>
+			<div class="item"><a href="#oferta" id="goferta">Публичная оферта</a></div> -->
+            </div>
+        </div>
+    </footer>
+    <div id="gotop"></div>
+    <div class="order-box" id="ordering" style="display:none">
+      
+        <div class="order-info">
+            <div class="prod-desc">
+                <div class="prod-title">
+                    <div class="rating"><img src="images/ico2.png" alt="rating"></div> <span id="order_name"></span>
+                </div>
+                <div class="prod-info fixing">
+                    <div class="prod-info-item"><span class="weightbold">Размер:</span> <span id="order_hlopok"></span></div>
+                    <div class="prod-info-item"><span class="weightbold">Материал:</span> <span id="order_mat"></span></div>
+                    <div class="prod-info-item"><span class="weightbold">Цена:</span> <span class="old-price"><span id="old-price"></span></span> <span class="new-price"><span id="new-price"></span></span></div>
+                </div>
+                <div class="prod-info">
+                    <div class="prod-info-item"><span class="weightbold">Наволочки:</span> <span id="order_navoloch">70*70 - 2шт</span></div>
+                    <div class="prod-info-item"><span class="weightbold">Пододеяльник:</span> <span id="order_pod">150*220</span></div>
+                    <div class="prod-info-item"><span class="weightbold">Простыня:</span> <span id="order_prost">150*220</span></div>
+                </div>
+                <div class="prod-buttons-s">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="callback" id="callback" style="display:none">
+        <div class="title">Заказать звонок</div>
+        <div class="form">
+            <div class="lead-iframe-wrap"><iframe style="width:100%;min-height:520px;border:0;display:block;" src="https://xshopcart.com/form/?off=jDb0Tmxw&lnk=37383&m=6bbc9a6604ef&language=ru&country=RU&select=countrySelect&s=vZ6FME4Z&color=light&is_price=no" ></iframe></div>
+        </div>
+    </div>
+    <div class="callback" id="suc_callback" style="display:none">
+        <div class="suc_info">
+            Наш менеджер в ближайшее время вам перезвонит
+        </div>
+    </div>
+    <div id="order" class="order" style="display:none;">
+        <div class="box_oder_image">
+            <div class="box_order_fix">
+                <div class="box_order-logo">
+                    <div class="ico"></div>
+                    <div class="text">ГлавПостель</div>
+                </div>
+                <div class="home-info-box">
+                    <div class="title">ВЫСОКОКАЧЕСТВЕННОЕ<br> ПОСТЕЛЬНОЕ БЕЛЬЕ</div>
+                    <div class="description">Высококачественное, сертифицированное постельное белье от производителя!</div>
+                </div>
+            </div>
+            <div class="box_order_line">
+                <div class="ico"></div>
+                <div class="text">
+                    <div class="item">БЕСПЛАТНАЯ ДОСТАВКА ПО всей россии</div>
+                    <div class="item">При покупке от двух комплектов!</div>
+                </div>
+            </div>
+        </div>
+        <div class="box_order_info">
+            <div class="box_order_title">Ваш заказ</div>
+            <div class="box_order_img">
+                <div class="block clear">
+                     
+                    <div class="info">
+                        <div class="name" id="name"></div>
+                        <div class="price">
+                            <span class="gray">Итого:</span>
+                            <span><span id="price"></span> <span class="small"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="lead-iframe-wrap"><iframe style="width:100%;min-height:520px;border:0;display:block;" src="https://xshopcart.com/form/?off=jDb0Tmxw&lnk=37383&m=6bbc9a6604ef&language=ru&country=RU&select=countrySelect&s=vZ6FME4Z&color=light&is_price=no" ></iframe></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="order_suc" class="order" style="display:none;">
+        <div class="box_oder_image">
+            <div class="box_order_fix">
+                <div class="box_order-logo">
+                    <div class="ico"></div>
+                    <div class="text">ГлавПостель</div>
+                </div>
+                <div class="home-info-box">
+                    <div class="title">ВЫСОКОКАЧЕСТВЕННОЕ<br> ПОСТЕЛЬНОЕ БЕЛЬЕ</div>
+                    <div class="description">Высококачественное, сертифицированное постельное белье от производителя!</div>
+                </div>
+            </div>
+            <div class="box_order_line">
+                <div class="ico"></div>
+                <div class="text">
+                    <div class="item">БЕСПЛАТНАЯ ДОСТАВКА ПО всей россии</div>
+                    <div class="item">При заказе от двух комплектов!</div>
+                </div>
+            </div>
+        </div>
+        <div class="box_order_info">
+            <div class="box_order_suc">
+                <div class="title">Спасибо!</div>
+                <div class="text">
