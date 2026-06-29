@@ -1,0 +1,36 @@
+L55: </script>
+L56: <noscript><div><img src="https://mc.yandex.ru/watch/110150078" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+L57: <!-- /Yandex.Metrika counter -->
+L58: <script>
+L59: document.addEventListener('click', function(e){
+L60:   var a = e.target.closest('a[href="#order"], a[href="#callback"], a.cb, #sat_ordering, #sat_order');
+L61:   if(a && window.ym){ ym(110150078, 'reachGoal', 'lead_form_open'); }
+L62: });
+--------
+L83:   function fireIntent(){
+L84:     try{ var p=makeProbe(); p.focus(); setTimeout(function(){ try{p.blur();}catch(e){} },50); }catch(e){}
+L85:   }
+L86:   // 1) клики по CTA, открывающим форму заказа
+L87:   document.addEventListener('click', function(e){
+L88:     if(e.target.closest('a[href="#order"], a[href="#callback"], a.cb, #sat_ordering, #sat_order, .lead-iframe-wrap')){
+L89:       fireIntent();
+L90:     }
+--------
+L140:                         </div>
+L141:                     </div>
+L142:                     <div class="home-cont-box">
+L143:                         <div class="title">Консультации Бесплатно!</div>
+L144:                         <div class="desc">Закажите обратный звонок!</div>
+L145:                         <div class="button"><a href="#callback" class="cb"><i class="fa fa-phone"></i>Обратный звонок</a></div>
+L146:                     </div>
+L147:                     <div class="ico-mobile"><img src="images/ico3.png"></div>
+--------
+L1458:                     </div>
+L1459:                 </div>
+L1460:                 <div class="work-box-fix">
+L1461:                     <div class="work-box">
+L1462:                         <div class="title">Есть вопросы? Оставьте телефон, мы Вам перезвоним!</div>
+L1463:                         <div class="button"><a href="#callback" class="cb"><i class="fa fa-phone"></i>Обратный звонок</a></div>
+L1464:                     </div>
+L1465:                 </div>
+--------
