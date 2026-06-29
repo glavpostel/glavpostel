@@ -3,103 +3,103 @@
 
 /* ===================== ДАННЫЕ ОТЗЫВОВ ===================== */
 var REVIEWS=[
- {name:"Ольга",city:"Краснодар",date:"14 марта 2025",rating:5,color:"бежевый",
+ {art:1,name:"Ольга",city:"Краснодар",date:"14 марта 2025",rating:5,
   pros:"Сатин плотный, приятный к телу, совсем не электризуется. После стирки не полинял и не сел.",cons:"",
   comment:"Упаковано аккуратно, доставили быстро. Очень довольна!",
   reply:"Ольга, спасибо за подробный отзыв и видео! Рады, что комплект порадовал. Ждём Вас снова!",
   photos:["reviews/r1-1.png","reviews/r1-2.png"],video:"reviews/r1.mp4"},
 
- {name:"Марина",city:"Ростов-на-Дону",date:"2 февраля 2025",rating:5,color:"белый",
+ {art:2,name:"Марина",city:"Ростов-на-Дону",date:"2 февраля 2025",rating:5,
   pros:"Ткань мягкая, цвет ровно как на фото.",cons:"",
   comment:"Спим теперь всей семьёй только на таком.",
   reply:"Марина, благодарим за отзыв! Приятных снов.",
   photos:["reviews/r2-1.png"],video:null},
 
- {name:"Светлана",city:"Воронеж",date:"19 января 2025",rating:4,color:"серый",
+ {art:37,name:"Светлана",city:"Воронеж",date:"19 января 2025",rating:4,
   pros:"Сатин действительно качественный, бельё плотное.",cons:"Доставку ждала чуть дольше, чем рассчитывала.",
   comment:"Но результат того стоил.",
   reply:"Светлана, спасибо! Учтём замечание по срокам — уже работаем над ускорением доставки.",
   photos:["reviews/r3-1.png","reviews/r3-2.png"],video:null},
 
- {name:"Екатерина",city:"Краснодар",date:"28 февраля 2025",rating:5,color:"голубой",
+ {art:21,name:"Екатерина",city:"Краснодар",date:"28 февраля 2025",rating:5,
   pros:"Шов ровный, наволочки с запахом, ткань шикарная за такую цену.",cons:"",
   comment:"Муж оценил. Сняла видео, чтобы было видно качество.",
   reply:"Екатерина, спасибо за видеоотзыв! Очень приятно.",
   photos:["reviews/r4-1.png"],video:"reviews/r4.mp4"},
 
- {name:"Анна",city:"Самара",date:"7 марта 2025",rating:5,color:"розовый",
+ {art:29,name:"Анна",city:"Самара",date:"7 марта 2025",rating:5,
   pros:"Бельё плотное, цвет благородный, упаковка подарочная.",cons:"",
   comment:"Брала в подарок маме — она в восторге!",
   reply:"Анна, спасибо! Передавайте маме наилучшие пожелания!",
   photos:["reviews/r5-1.png","reviews/r5-2.png"],video:null},
 
- {name:"Ирина",city:"Казань",date:"21 декабря 2024",rating:5,color:"бежевый",
+ {art:27,name:"Ирина",city:"Казань",date:"21 декабря 2024",rating:5,
   pros:"Отличный сатин, не скользит и почти не мнётся.",cons:"",
   comment:"Заказала уже второй комплект.",
   reply:"Ирина, спасибо за доверие и повторный заказ!",
   photos:["reviews/r6-1.png"],video:null},
 
- {name:"Наталья",city:"Уфа",date:"11 января 2025",rating:4,color:"графит",
+ {art:25,name:"Наталья",city:"Уфа",date:"11 января 2025",rating:4,
   pros:"Качество хорошее, соответствует описанию.",cons:"Цвет чуть темнее, чем на картинке.",
   comment:"Но мне даже больше нравится.",
   reply:"Наталья, благодарим за честный отзыв!",
   photos:["reviews/r7-1.png"],video:null},
 
- {name:"Татьяна",city:"Сочи",date:"3 марта 2025",rating:5,color:"белый",
+ {art:23,name:"Татьяна",city:"Сочи",date:"3 марта 2025",rating:5,
   pros:"Приятный материал, быстрая доставка.",cons:"",
   comment:"Сплю теперь как в облаке.",
   reply:"Татьяна, сладких снов! Спасибо, что выбрали нас.",
   photos:["reviews/r8-1.png"],video:null},
 
- {name:"Юлия",city:"Нижний Новгород",date:"16 февраля 2025",rating:5,color:"бежевый",
+ {art:20,name:"Юлия",city:"Нижний Новгород",date:"16 февраля 2025",rating:5,
   pros:"Сатин гладкий, дышит, летом не жарко.",cons:"",
   comment:"Долго выбирала и не пожалела. Записала видео распаковки.",
   reply:"Юлия, спасибо за видео и тёплые слова!",
   photos:["reviews/r9-1.png"],video:"reviews/r9.mp4"},
 
- {name:"Виктория",city:"Пермь",date:"24 декабря 2024",rating:5,color:"синий",
+ {art:13,name:"Виктория",city:"Пермь",date:"24 декабря 2024",rating:5,
   pros:"Ткань плотная, швы аккуратные.",cons:"",
   comment:"Комплект супер, рекомендую!",
   reply:"Виктория, спасибо за рекомендацию!",
   photos:["reviews/r10-1.png"],video:null},
 
- {name:"Людмила",city:"Волгоград",date:"9 января 2025",rating:4,color:"серый",
+ {art:6,name:"Людмила",city:"Волгоград",date:"9 января 2025",rating:4,
   pros:"Бельё приятное к телу, хорошее.",cons:"Немного помялось при пересылке.",
   comment:"После глажки всё отлично.",
   reply:"Людмила, спасибо! Рады, что всё в порядке.",
   photos:["reviews/r11-1.png"],video:null},
 
- {name:"Оксана",city:"Саратов",date:"30 января 2025",rating:5,color:"зелёный",
+ {art:5,name:"Оксана",city:"Саратов",date:"30 января 2025",rating:5,
   pros:"Качество на высоте, цвет сочный.",cons:"",
   comment:"Заказывала семейный — всем хватило.",
   reply:"Оксана, благодарим за заказ! Уюта Вашему дому.",
   photos:["reviews/r12-1.png"],video:null},
 
- {name:"Елена",city:"Тюмень",date:"5 февраля 2025",rating:5,color:"белый",
+ {art:4,name:"Елена",city:"Тюмень",date:"5 февраля 2025",rating:5,
   pros:"Сатин мягкий, после стирки как новый.",cons:"",
   comment:"Очень довольна покупкой.",
   reply:"Елена, спасибо! Носите с удовольствием.",
   photos:["reviews/r13-1.png"],video:null},
 
- {name:"Дарья",city:"Челябинск",date:"22 февраля 2025",rating:5,color:"голубой",
+ {art:17,name:"Дарья",city:"Челябинск",date:"22 февраля 2025",rating:5,
   pros:"Бельё шикарное и плотное, пришло раньше срока.",cons:"",
   comment:"Буду заказывать ещё.",
   reply:"Дарья, спасибо! Ждём Вас снова.",
   photos:["reviews/r14-1.png"],video:null},
 
- {name:"Алёна",city:"Краснодар",date:"1 марта 2025",rating:5,color:"бежевый",
+ {art:8,name:"Алёна",city:"Краснодар",date:"1 марта 2025",rating:5,
   pros:"Качество стабильно отличное.",cons:"",
   comment:"Это уже третий комплект от вас. Снимаю видео для тех, кто сомневается.",
   reply:"Алёна, огромное спасибо за лояльность и видео!",
   photos:["reviews/r15-1.png"],video:"reviews/r15.mp4"},
 
- {name:"Галина",city:"Ижевск",date:"13 января 2025",rating:4,color:"розовый",
+ {art:38,name:"Галина",city:"Ижевск",date:"13 января 2025",rating:4,
   pros:"Сатин приятный, постельное хорошее.",cons:"Хотелось бы больше расцветок.",
   comment:"А так всё нравится.",
   reply:"Галина, спасибо! Скоро пополним ассортимент новыми расцветками.",
   photos:["reviews/r16-1.png"],video:null},
 
- {name:"Кристина",city:"Ставрополь",date:"26 февраля 2025",rating:5,color:"серый",
+ {art:28,name:"Кристина",city:"Ставрополь",date:"26 февраля 2025",rating:5,
   pros:"Мягкое, плотное, не просвечивает.",cons:"",
   comment:"За эти деньги — лучшее, что находила.",
   reply:"Кристина, спасибо за отзыв! Очень приятно.",
@@ -125,7 +125,6 @@ function bg(u){return "background-image:url('"+u+"')";}
 function avg(){var s=0;REVIEWS.forEach(function(r){s+=r.rating;});return s/REVIEWS.length;}
 function plural(n){var a=n%10,b=n%100;if(a===1&&b!==11)return "отзыв";if(a>=2&&a<=4&&(b<10||b>=20))return "отзыва";return "отзывов";}
 function posterOf(it,r){return it.type==="video"?(r.photos[0]||""):it.src;}
-function cap(s){return s?s.charAt(0).toUpperCase()+s.slice(1):s;}
 
 /* ===================== ЛАЙТБОКС ТОВАРА ===================== */
 var plxOv,plxBig,plxStrip,plxImgs,plxIdx;
@@ -239,7 +238,7 @@ function renderG(){
  var side='<div class="rvm-h"><div class="rvm-ava">'+esc(r.name.charAt(0))+'</div>'+
   '<div><div class="rvm-name">'+esc(r.name)+'</div><div class="rvm-sub">'+esc(r.city)+' \u00b7 '+esc(r.date)+'</div></div></div>'+
   '<div class="rvm-stars">'+stars(r.rating)+'</div>'+
-  '<div class="rvm-objtitle">Комплект «Сатин» \u00b7 '+esc(cap(r.color))+'</div>'+
+  '<div class="rvm-objtitle">Артикул: '+esc(String(r.art))+'</div>'+
   '<p class="rvm-text">'+esc(txt)+'</p>'+
   (r.media.length>1?'<div class="rvm-thumbs-label">Ещё фото отзыва</div>':'')+
   '<div class="rvm-thumbs">'+thumbs+'</div>'+
