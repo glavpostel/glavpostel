@@ -263,3 +263,12 @@ ul.products-filter li a{display:inline-block !important;padding:11px 28px !impor
 .rv-page{width:9px;height:9px;min-width:0;padding:0;border-radius:50%;font-size:0;line-height:0;overflow:hidden;border:1px solid #d8d8d8;background:#fff;}
 .rv-page.act{width:22px;height:9px;border-radius:6px;background:#e8730c;border-color:#e8730c;}
 }
+/* ===== reviews v24: both arrows orange when active, dots one row ===== */
+.rv-arrow.prev,.rv-arrow.next{background:#e8730c !important;color:#fff !important;box-shadow:0 5px 18px rgba(232,115,12,.55) !important;}
+.rv-arrow.prev:hover,.rv-arrow.next:hover{background:#cf6207 !important;}
+.rv-arrow[disabled],.rv-arrow.prev[disabled],.rv-arrow.next[disabled]{background:#f3cdab !important;color:#fff !important;box-shadow:none !important;opacity:1 !important;}
+@media(max-width:560px){
+.rv-pages{flex-wrap:nowrap !important;gap:4px !important;overflow:hidden;justify-content:center;}
+.rv-page{width:8px !important;height:8px !important;min-width:0 !important;padding:0 !important;border-radius:50% !important;font-size:0 !important;border:1px solid #d8d8d8;}
+.rv-page.act{width:18px !important;height:8px !important;border-radius:6px !important;background:#e8730c !important;border-color:#e8730c !important;}
+}
