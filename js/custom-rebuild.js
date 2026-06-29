@@ -106,12 +106,15 @@ var REVIEWS=[
   photos:["reviews/r17-1.png"],video:null}
 ];
 
-/* media[] для каждого отзыва: видео (если есть) + фото */
+/* media[] и глобальный плоский список */
+var MEDIA=[];
 REVIEWS.forEach(function(r){
  var m=[];
  if(r.video)m.push({type:"video",src:r.video});
  r.photos.forEach(function(p){m.push({type:"img",src:p});});
  r.media=m;
+ r.gStart=MEDIA.length;
+ m.forEach(function(it){MEDIA.push({rev:r,type:it.type,src:it.src});});
 });
 
 /* ===================== ХЕЛПЕРЫ ===================== */
@@ -119,6 +122,9 @@ function el(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=c
 function stars(n){var s="";for(var i=0;i<5;i++)s+=(i<n?"\u2605":"\u2606");return s;}
 function esc(t){return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function bg(u){return "background-image:url('"+u+"')";}
+function avg(){var s=0;REVIEWS.forEach(function(r){s+=r.rating;});return s/REVIEWS.length;}
+function plural(n){var a=n%10,b=n%100;if(a===1&&b!==11)return "отзыв";if(a>=2&&a<=4&&(b<10||b>=20))return "отзыва";return "отзывов";}
+function cover(r){return r.photos[0]||(r.video||"");}
 
 /* ===================== ЛАЙТБОКС ТОВАРА ===================== */
 var plxOv,plxBig,plxStrip,plxImgs,plxIdx;
@@ -159,8 +165,8 @@ function openPlx(art,imgs,start){
 }
 function closePlx(){if(plxOv)plxOv.classList.remove("open");}
 function doOrder(art){
- var c=document.getElementById("color");if(c)c.value=art;
- closePlx();
+ var c=document.getElementById("color");if(c&&art)c.value=art;
+ closePlx();closeRvm();
  var t=document.querySelector('a.modal[href="#order"]');
  if(t){t.click();}else{location.hash="#order";}
 }
@@ -188,42 +194,37 @@ function initGalleries(){
  });
 }
 
-/* ===================== МОДАЛКА ОТЗЫВА (WB) ===================== */
-var rvmOv,rvmStage,rvmThumbs,curMedia,curIdx;
+/* ===================== МОДАЛКА ОТЗЫВА (сквозная навигация) ===================== */
+var rvmOv,rvmStage,curG;
 function buildRvm(){
  rvmOv=el("div","rvm-overlay");
  rvmOv.innerHTML='<div class="rvm-box"><span class="rvm-close">\u00d7</span>'+
-  '<div class="rvm-left"><button class="rvm-nav prev">\u2039</button><div class="rvm-stage" id="rvmStage"></div><button class="rvm-nav next">\u203a</button></div>'+
+  '<div class="rvm-left"><div class="rvm-back">Ко всем фото и видео</div>'+
+  '<button class="rvm-nav prev">\u2039</button><div class="rvm-stage" id="rvmStage"></div><button class="rvm-nav next">\u203a</button>'+
+  '<div class="rvm-count" id="rvmCount"></div></div>'+
   '<div class="rvm-side" id="rvmSide"></div></div>';
  document.body.appendChild(rvmOv);
  rvmStage=rvmOv.querySelector("#rvmStage");
  rvmOv.querySelector(".rvm-close").onclick=closeRvm;
+ rvmOv.querySelector(".rvm-back").onclick=closeRvm;
  rvmOv.addEventListener("click",function(e){if(e.target===rvmOv)closeRvm();});
- rvmOv.querySelector(".rvm-nav.prev").onclick=function(){navMedia(-1);};
- rvmOv.querySelector(".rvm-nav.next").onclick=function(){navMedia(1);};
+ rvmOv.querySelector(".rvm-nav.prev").onclick=function(){navG(-1);};
+ rvmOv.querySelector(".rvm-nav.next").onclick=function(){navG(1);};
 }
-function renderStage(){
- var it=curMedia[curIdx];
- if(it.type==="video"){
-  rvmStage.innerHTML='<video src="'+it.src+'" controls autoplay playsinline></video>';
+function navG(d){curG=(curG+d+MEDIA.length)%MEDIA.length;renderG();}
+function renderG(){
+ var m=MEDIA[curG],r=m.rev;
+ if(m.type==="video"){
+  rvmStage.innerHTML='<video src="'+m.src+'" controls autoplay playsinline></video>';
  }else{
-  rvmStage.innerHTML='<div class="img" style="'+bg(it.src)+'"></div>';
+  rvmStage.innerHTML='<div class="img" style="'+bg(m.src)+'"></div>';
  }
- var th=rvmOv.querySelectorAll(".rvm-thumbs div");
- Array.prototype.forEach.call(th,function(d,i){d.className=(i===curIdx?"act ":"")+(curMedia[i].type==="video"?"vid":"");});
- var nav=rvmOv.querySelectorAll(".rvm-nav");
- var multi=curMedia.length>1;
- nav[0].style.display=multi?"flex":"none";
- nav[1].style.display=multi?"flex":"none";
-}
-function navMedia(d){curIdx=(curIdx+d+curMedia.length)%curMedia.length;renderStage();}
-function openRvm(r,startIdx){
- if(!rvmOv)buildRvm();
- curMedia=r.media;curIdx=startIdx||0;
+ rvmOv.querySelector("#rvmCount").textContent=(curG+1)+" / "+MEDIA.length;
+ var localActive=curG-r.gStart;
  var thumbs="";
- curMedia.forEach(function(it,i){
+ r.media.forEach(function(it,i){
   var poster=it.type==="video"?(r.photos[0]||""):it.src;
-  thumbs+='<div data-i="'+i+'" style="'+bg(poster)+'"></div>';
+  thumbs+='<div data-g="'+(r.gStart+i)+'" class="'+(i===localActive?"act ":"")+(it.type==="video"?"vid":"")+'" style="'+bg(poster)+'"></div>';
  });
  var side='<div class="rvm-h"><div class="rvm-ava">'+esc(r.name.charAt(0))+'</div>'+
   '<div><div class="rvm-name">'+esc(r.name)+'</div><div class="rvm-sub">'+esc(r.city)+' \u00b7 '+esc(r.date)+'</div></div></div>'+
@@ -233,68 +234,105 @@ function openRvm(r,startIdx){
   (r.cons?'<div class="rvm-f"><b>Недостатки:</b> <span>'+esc(r.cons)+'</span></div>':'')+
   (r.comment?'<div class="rvm-f"><b>Комментарий:</b> <span>'+esc(r.comment)+'</span></div>':'')+
   '<div class="rvm-thumbs">'+thumbs+'</div>'+
-  '<div class="rvm-reply"><b>Ответ продавца</b><span>'+esc(r.reply)+'</span></div>';
- rvmOv.querySelector("#rvmSide").innerHTML=side;
- Array.prototype.forEach.call(rvmOv.querySelectorAll(".rvm-thumbs div"),function(d){
-  d.onclick=function(){curIdx=parseInt(d.getAttribute("data-i"),10);renderStage();};
+  '<div class="rvm-reply"><b>Ответ продавца</b><span>'+esc(r.reply)+'</span></div>'+
+  '<a href="#order" class="rvm-cta" id="rvmCta">Заказать со скидкой ‒50%</a>';
+ var sd=rvmOv.querySelector("#rvmSide");
+ sd.innerHTML=side;
+ Array.prototype.forEach.call(sd.querySelectorAll(".rvm-thumbs div"),function(d){
+  d.onclick=function(){curG=parseInt(d.getAttribute("data-g"),10);renderG();};
  });
- renderStage();
+ sd.querySelector("#rvmCta").onclick=function(e){e.preventDefault();doOrder("");};
+}
+function openRvm(gIdx){
+ if(!rvmOv)buildRvm();
+ curG=gIdx||0;
+ renderG();
  rvmOv.classList.add("open");
 }
 function closeRvm(){if(rvmOv){rvmOv.classList.remove("open");rvmStage.innerHTML="";}}
 
-/* ===================== РЕНДЕР БЛОКА ОТЗЫВОВ ===================== */
-function avg(){var s=0;REVIEWS.forEach(function(r){s+=r.rating;});return s/REVIEWS.length;}
-function plural(n){var a=n%10,b=n%100;if(a===1&&b!==11)return "отзыв";if(a>=2&&a<=4&&(b<10||b>=20))return "отзыва";return "отзывов";}
+/* ===================== КАРУСЕЛЬ ОТЗЫВОВ ===================== */
+var track,viewport,pagesBox,arrPrev,arrNext,curPage=0;
+function perPage(){var w=window.innerWidth;if(w<=480)return 1;if(w<=680)return 2;if(w<=1000)return 3;return 4;}
+function nPages(){return Math.ceil(REVIEWS.length/perPage());}
+function buildCards(){
+ track.innerHTML="";
+ var pp=perPage();
+ track.style.setProperty("--per",pp);
+ REVIEWS.forEach(function(r,ri){
+  var card=el("div","rv-card");
+  card.style.flexBasis="calc((100% - "+((pp-1)*16)+"px) / "+pp+")";
+  var badge=r.video?'<span class="rv-cov-badge">\u25b6 Видео</span>':(r.photos.length>1?'<span class="rv-cov-badge">'+r.photos.length+' фото</span>':'');
+  card.innerHTML='<div class="rv-cover"><div class="ph" style="'+bg(cover(r))+'"></div>'+badge+'<div class="rv-zoom"><span>\u2922</span></div></div>'+
+   '<div class="rv-body"><div class="rv-top"><span class="rv-name">'+esc(r.name)+'</span><span class="rv-date">'+esc(r.date)+'</span></div>'+
+   '<div class="rv-stars">'+stars(r.rating)+'</div>'+
+   '<div class="rv-pros"><b>Достоинства:</b> '+esc(r.pros)+'</div></div>';
+  card.onclick=function(){openRvm(r.gStart);};
+  track.appendChild(card);
+ });
+}
+function buildPages(){
+ pagesBox.innerHTML="";
+ var pp=perPage(),np=nPages();
+ for(var p=0;p<np;p++){
+  var s=p*pp+1,e=Math.min((p+1)*pp,REVIEWS.length);
+  var b=el("div","rv-page"+(p===curPage?" act":""),s===e?(""+s):(s+"-"+e));
+  (function(pi){b.onclick=function(){go(pi);};})(p);
+  pagesBox.appendChild(b);
+ }
+}
+function go(p){
+ var np=nPages();
+ if(p<0)p=0;if(p>np-1)p=np-1;
+ curPage=p;
+ track.style.transform="translateX(calc(-"+p+" * (100% + 16px)))";
+ arrPrev.disabled=(p===0);
+ arrNext.disabled=(p>=np-1);
+ Array.prototype.forEach.call(pagesBox.children,function(c,i){c.className="rv-page"+(i===curPage?" act":"");});
+}
 function renderReviews(){
  var root=document.getElementById("rvRoot");
  if(!root)return;
- root.innerHTML="";
+ var sr=document.querySelector(".satin-reviews");
+ if(sr){var old=sr.querySelector(".box-title");if(old)old.style.display="none";}
  var a=avg();
- var sc=el("div","rv-summary");
- var strip="";
- REVIEWS.forEach(function(r,ri){
-  r.media.forEach(function(it,mi){
-   if(it.type==="video"){
-    strip+='<div class="rv-stripit" data-r="'+ri+'" data-m="'+mi+'"><video src="'+it.src+'" preload="metadata" muted></video><span class="pl"></span></div>';
-   }else{
-    strip+='<div class="rv-stripit" data-r="'+ri+'" data-m="'+mi+'"><div class="ph" style="'+bg(it.src)+'"></div></div>';
-   }
-  });
+ root.innerHTML=
+  '<div class="rv-head"><div class="rv-h-title">Отзывы наших клиентов</div>'+
+   '<div class="rv-rate"><span class="num">'+a.toFixed(1).replace(".",",")+'</span>'+
+   '<span class="stwrap"><span class="st">'+stars(Math.round(a))+'</span>'+
+   '<span class="cnt">'+REVIEWS.length+' '+plural(REVIEWS.length)+'</span></span></div></div>'+
+  '<div class="rv-carousel"><button class="rv-arrow prev">\u2039</button>'+
+   '<div class="rv-viewport"><div class="rv-track" id="rvTrack"></div></div>'+
+   '<button class="rv-arrow next">\u203a</button></div>'+
+  '<div class="rv-pages" id="rvPages"></div>';
+ track=root.querySelector("#rvTrack");
+ viewport=root.querySelector(".rv-viewport");
+ pagesBox=root.querySelector("#rvPages");
+ arrPrev=root.querySelector(".rv-arrow.prev");
+ arrNext=root.querySelector(".rv-arrow.next");
+ arrPrev.onclick=function(){go(curPage-1);};
+ arrNext.onclick=function(){go(curPage+1);};
+ buildCards();buildPages();go(0);
+ var rt;
+ window.addEventListener("resize",function(){
+  clearTimeout(rt);
+  rt=setTimeout(function(){buildCards();if(curPage>nPages()-1)curPage=nPages()-1;buildPages();go(curPage);},180);
  });
- sc.innerHTML='<div class="rv-score"><span class="num">'+a.toFixed(1).replace(".",",")+'</span>'+
-  '<span class="st">'+stars(Math.round(a))+'</span>'+
-  '<span class="cnt">'+REVIEWS.length+' '+plural(REVIEWS.length)+'</span></div>'+
-  '<div class="rv-strip">'+strip+'</div>';
- root.appendChild(sc);
- Array.prototype.forEach.call(sc.querySelectorAll(".rv-stripit"),function(d){
-  d.onclick=function(){openRvm(REVIEWS[+d.getAttribute("data-r")],+d.getAttribute("data-m"));};
- });
+}
 
- var grid=el("div","rv-grid");
- REVIEWS.forEach(function(r,ri){
-  var card=el("div","rv-card");
-  var media;
-  if(r.video){
-   media='<video src="'+r.video+'" controls playsinline preload="metadata"></video><span class="rv-badge">\u25b6 Видео</span>';
-  }else{
-   media='<div class="ph" style="'+bg(r.photos[0])+'"></div>'+(r.photos.length>1?'<span class="rv-badge">'+r.photos.length+' фото</span>':'');
-  }
-  card.innerHTML='<div class="rv-media">'+media+'</div>'+
-   '<div class="rv-body"><div class="rv-top"><span class="rv-name">'+esc(r.name)+'</span><span class="rv-date">'+esc(r.date)+'</span></div>'+
-   '<div class="rv-stars">'+stars(r.rating)+'</div>'+
-   '<div class="rv-pros"><b>Достоинства:</b> '+esc(r.pros)+'</div>'+
-   '<div class="rv-more">Читать полностью \u2192</div></div>';
-  card.addEventListener("click",function(e){
-   if(e.target.closest("video"))return;
-   openRvm(r,0);
-  });
-  grid.appendChild(card);
- });
- root.appendChild(grid);
+/* ===================== ПЕРЕНОС БЛОКА над “Сатин - лучший материал” ===================== */
+function relocate(){
+ var sr=document.querySelector(".satin-reviews");
+ if(!sr)return;
+ var heads=document.querySelectorAll(".box-title");
+ var target=null;
+ Array.prototype.forEach.call(heads,function(h){if(h.textContent.indexOf("лучший материал")>=0)target=h;});
+ if(!target)return;
+ var sec=target.closest("section")||target.parentNode;
+ if(sec&&sec.parentNode)sec.parentNode.insertBefore(sr,sec);
 }
 
 /* ===================== СТАРТ ===================== */
-function init(){initGalleries();renderReviews();}
+function init(){initGalleries();relocate();renderReviews();}
 if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init);}else{init();}
 })();

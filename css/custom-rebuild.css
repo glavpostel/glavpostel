@@ -1,6 +1,6 @@
-/* ============ ГлавПостель rebuild v2 ============ */
+/* ============ ГлавПостель rebuild v3 ============ */
 
-/* ---- Карточка: галерея 3 фото (WB) ---- */
+/* ---- Карточка товара: галерея 3 фото ---- */
 .prod-image{height:auto !important;}
 .pgal{display:flex;gap:6px;height:236px;padding:8px;box-sizing:border-box;position:relative;z-index:14;}
 .pgal__thumbs{display:flex;flex-direction:column;gap:6px;width:60px;flex:0 0 60px;}
@@ -8,7 +8,6 @@
 .pgal__thumb:hover{border-color:#e8730c;transform:translateY(-1px);}
 .pgal__main{flex:1;background-size:cover;background-position:center;border-radius:8px;cursor:zoom-in;border:1px solid #eee;background-color:#fafafa;}
 @media(max-width:768px){.pgal{height:210px;}}
-/* Бейдж –50% поверх всего */
 .prod-sale{z-index:16 !important;}
 
 /* ---- Лайтбокс товара ---- */
@@ -35,73 +34,99 @@
 .plx-buy:hover{background:#cf6207;}
 .plx-close{position:absolute;top:12px;right:18px;font-size:32px;cursor:pointer;line-height:1;z-index:3;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);}
 
-/* ---- Сводка + лента отзывов ---- */
-.satin-reviews{padding:8px 0 26px;}
-.rv-summary{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin:6px 0 22px;}
-.rv-score{display:flex;flex-direction:column;align-items:flex-start;min-width:118px;}
-.rv-score .num{font-size:46px;font-weight:800;color:#222;line-height:1;}
-.rv-score .st{color:#f5a623;font-size:18px;margin:6px 0 4px;letter-spacing:2px;}
-.rv-score .cnt{color:#8a8a8a;font-size:13px;}
-.rv-strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;flex:1;min-width:0;}
-.rv-strip::-webkit-scrollbar{height:6px;}
-.rv-strip::-webkit-scrollbar-thumb{background:#ddd;border-radius:3px;}
-.rv-stripit{position:relative;width:92px;height:122px;flex:0 0 92px;border-radius:10px;overflow:hidden;cursor:pointer;background:#f2f2f2;}
-.rv-stripit .ph{width:100%;height:100%;background-size:cover;background-position:center;}
-.rv-stripit video{width:100%;height:100%;object-fit:cover;background:#000;pointer-events:none;}
-.rv-stripit .pl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-.rv-stripit .pl:after{content:"";width:0;height:0;border-left:17px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;filter:drop-shadow(0 0 3px rgba(0,0,0,.6));margin-left:3px;}
+/* ============ БЛОК ОТЗЫВОВ (белая карточка, фикс каркас) ============ */
+.satin-reviews{
+  background:#fff;
+  border-radius:18px;
+  max-width:1180px;
+  margin:34px auto;
+  padding:28px 30px 24px;
+  box-shadow:0 6px 30px rgba(0,0,0,.07);
+  box-sizing:border-box;
+}
+.satin-reviews .reviews-items{margin:0;}
+.rv-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;}
+.rv-h-title{font-size:30px;font-weight:800;color:#222;line-height:1.1;}
+.rv-rate{display:flex;align-items:center;gap:10px;}
+.rv-rate .num{font-size:30px;font-weight:800;color:#222;}
+.rv-rate .stwrap{display:flex;flex-direction:column;}
+.rv-rate .st{color:#f5a623;font-size:18px;letter-spacing:1px;line-height:1;}
+.rv-rate .cnt{color:#8a8a8a;font-size:13px;margin-top:2px;}
+@media(max-width:768px){.rv-h-title{font-size:22px;}.rv-rate .num{font-size:24px;}}
 
-/* ---- Сетка карточек отзывов ---- */
-.rv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-@media(max-width:1000px){.rv-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:760px){.rv-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.rv-grid{grid-template-columns:1fr;}}
-.rv-card{background:#fff;border:1px solid #ececec;border-radius:14px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(0,0,0,.04);transition:transform .15s,box-shadow .15s;}
+.rv-carousel{position:relative;}
+.rv-viewport{overflow:hidden;}
+.rv-track{display:flex;gap:16px;transition:transform .38s ease;}
+.rv-card{
+  --per:4;
+  flex:0 0 calc((100% - 48px) / 4);
+  box-sizing:border-box;
+  height:438px;
+  background:#fff;border:1px solid #ececec;border-radius:14px;overflow:hidden;
+  cursor:pointer;display:flex;flex-direction:column;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);transition:transform .15s,box-shadow .15s;
+}
 .rv-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.10);}
-.rv-media{position:relative;height:210px;background:#f2f2f2;}
-.rv-media .ph{width:100%;height:100%;background-size:cover;background-position:center;}
-.rv-media video{width:100%;height:100%;object-fit:contain;display:block;background:#000;}
-.rv-badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;padding:3px 9px;border-radius:20px;letter-spacing:.3px;}
-.rv-body{padding:12px 13px 14px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.rv-cover{position:relative;height:232px;flex:0 0 232px;background:#f2f2f2;}
+.rv-cover .ph{width:100%;height:100%;background-size:cover;background-position:center;}
+.rv-cov-badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;padding:3px 9px;border-radius:20px;letter-spacing:.3px;}
+.rv-zoom{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s;}
+.rv-card:hover .rv-zoom{opacity:1;}
+.rv-zoom span{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-size:20px;color:#333;box-shadow:0 2px 10px rgba(0,0,0,.25);}
+.rv-body{padding:13px 14px 16px;display:flex;flex-direction:column;gap:7px;flex:1;}
 .rv-top{display:flex;justify-content:space-between;align-items:center;}
 .rv-name{font-weight:700;color:#222;font-size:15px;}
-.rv-stars{color:#f5a623;font-size:14px;letter-spacing:1px;}
 .rv-date{color:#9a9a9a;font-size:12px;}
-.rv-pros{color:#444;font-size:13px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
-.rv-pros b{color:#1f9d55;}
-.rv-more{color:#e8730c;font-size:13px;font-weight:600;margin-top:auto;}
+.rv-stars{color:#f5a623;font-size:14px;letter-spacing:1px;}
+.rv-pros{color:#444;font-size:13px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.rv-pros b{color:#1f9d55;font-weight:600;}
 
-/* ---- Модалка отзыва (WB) ---- */
-.rvm-overlay{position:fixed;inset:0;background:rgba(15,17,21,.82);z-index:100000;display:none;align-items:center;justify-content:center;padding:16px;}
+.rv-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:0 3px 14px rgba(0,0,0,.16);border:none;font-size:24px;line-height:1;cursor:pointer;color:#333;z-index:4;display:flex;align-items:center;justify-content:center;}
+.rv-arrow.prev{left:-20px;}
+.rv-arrow.next{right:-20px;}
+.rv-arrow[disabled]{opacity:.32;cursor:default;box-shadow:none;}
+@media(max-width:560px){.rv-arrow.prev{left:-6px;}.rv-arrow.next{right:-6px;}}
+
+.rv-pages{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px;}
+.rv-page{min-width:48px;padding:8px 10px;border:1px solid #e3e3e3;border-radius:10px;background:#fff;color:#555;font-size:13px;cursor:pointer;transition:.12s;}
+.rv-page:hover{border-color:#e8730c;color:#e8730c;}
+.rv-page.act{background:#e8730c;border-color:#e8730c;color:#fff;font-weight:700;}
+
+/* ---- Модалка отзыва (WB / svoyprorab) ---- */
+.rvm-overlay{position:fixed;inset:0;background:rgba(15,17,21,.85);z-index:100000;display:none;align-items:center;justify-content:center;padding:16px;}
 .rvm-overlay.open{display:flex;}
-.rvm-box{display:flex;max-width:940px;width:100%;max-height:92vh;background:#fff;border-radius:16px;overflow:hidden;position:relative;}
-@media(max-width:760px){.rvm-box{flex-direction:column;max-height:94vh;overflow:auto;}}
+.rvm-box{display:flex;max-width:1000px;width:100%;height:600px;max-height:92vh;background:#fff;border-radius:16px;overflow:hidden;position:relative;}
+@media(max-width:760px){.rvm-box{flex-direction:column;height:auto;max-height:94vh;overflow:auto;}}
 .rvm-left{flex:1;min-width:0;background:#0f1115;display:flex;align-items:center;justify-content:center;position:relative;}
 @media(max-width:760px){.rvm-left{height:320px;flex:none;}}
 .rvm-stage{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 .rvm-stage .img{width:100%;height:100%;background-size:contain;background-repeat:no-repeat;background-position:center;}
 .rvm-stage video{width:100%;height:100%;object-fit:contain;background:#000;}
-.rvm-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);border:none;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;z-index:2;}
-.rvm-nav.prev{left:12px;}
-.rvm-nav.next{right:12px;}
-.rvm-side{width:370px;flex:0 0 370px;overflow:auto;padding:24px 22px;}
+.rvm-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);border:none;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;z-index:2;}
+.rvm-nav.prev{left:14px;}
+.rvm-nav.next{right:14px;}
+.rvm-back{position:absolute;top:14px;left:16px;color:#fff;font-size:13px;opacity:.85;z-index:3;background:rgba(0,0,0,.3);padding:6px 12px;border-radius:20px;}
+.rvm-count{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);color:#fff;font-size:13px;background:rgba(0,0,0,.45);padding:5px 13px;border-radius:20px;z-index:3;}
+.rvm-side{width:380px;flex:0 0 380px;overflow:auto;padding:24px 22px;display:flex;flex-direction:column;}
 @media(max-width:760px){.rvm-side{width:auto;flex:auto;}}
 .rvm-h{display:flex;align-items:center;gap:12px;}
 .rvm-ava{width:46px;height:46px;border-radius:50%;background:#e8730c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px;flex:0 0 46px;}
 .rvm-name{font-weight:700;font-size:17px;color:#222;}
 .rvm-sub{font-size:12px;color:#9a9a9a;margin-top:2px;}
 .rvm-stars{color:#f5a623;font-size:17px;margin:12px 0 6px;letter-spacing:2px;}
-.rvm-color{display:inline-block;background:#f1f2f4;color:#555;font-size:12px;padding:4px 11px;border-radius:20px;margin-bottom:10px;}
-.rvm-f{margin:11px 0;font-size:14px;line-height:1.55;}
-.rvm-f b{color:#222;display:inline;}
+.rvm-color{display:inline-block;background:#f1f2f4;color:#555;font-size:12px;padding:4px 11px;border-radius:20px;margin-bottom:8px;align-self:flex-start;}
+.rvm-f{margin:9px 0;font-size:14px;line-height:1.55;}
+.rvm-f b{color:#222;}
 .rvm-f span{color:#444;}
-.rvm-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px;}
-.rvm-thumbs div{width:58px;height:58px;border-radius:8px;background-size:cover;background-position:center;background-color:#f2f2f2;cursor:pointer;border:2px solid transparent;position:relative;}
+.rvm-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px;}
+.rvm-thumbs div{width:56px;height:56px;border-radius:8px;background-size:cover;background-position:center;background-color:#f2f2f2;cursor:pointer;border:2px solid transparent;position:relative;}
 .rvm-thumbs div.act{border-color:#e8730c;}
 .rvm-thumbs div.vid:after{content:"\25b6";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;background:rgba(0,0,0,.35);border-radius:6px;}
-.rvm-reply{margin-top:16px;background:#f6f7f9;border-left:3px solid #e8730c;border-radius:0 10px 10px 0;padding:13px 15px;}
+.rvm-reply{margin-top:14px;background:#f6f7f9;border-left:3px solid #e8730c;border-radius:0 10px 10px 0;padding:13px 15px;}
 .rvm-reply b{display:block;color:#e8730c;font-size:13px;margin-bottom:5px;}
 .rvm-reply span{color:#555;font-size:14px;line-height:1.55;}
+.rvm-cta{display:block;text-align:center;margin-top:16px;background:#e8730c;color:#fff;font-weight:700;font-size:15px;padding:14px;border-radius:10px;text-decoration:none;transition:background .15s;}
+.rvm-cta:hover{background:#cf6207;}
 .rvm-close{position:absolute;top:10px;right:14px;font-size:30px;line-height:1;cursor:pointer;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);z-index:5;}
 @media(max-width:760px){.rvm-close{color:#333;text-shadow:none;}}
 
