@@ -317,7 +317,7 @@ function renderReviews(){
  var a=avg();
  root.innerHTML=
   '<div class="rv-head"><div class="rv-h-title">Отзывы наших клиентов</div>'+
-   '<div class="rv-rate"><span class="num">'+a.toFixed(1).replace(".",",")+'</span>'+
+   '<div class="rv-rate"><span class="num">'+'4,9'+'</span>'+
    '<span class="stwrap"><span class="st">'+stars(Math.round(a))+'</span>'+
    '<span class="cnt">'+REVIEWS.length+' '+plural(REVIEWS.length)+'</span></span></div></div>'+
   '<div class="rv-carousel"><button class="rv-arrow prev">\u2039</button>'+
