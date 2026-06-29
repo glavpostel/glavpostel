@@ -234,3 +234,7 @@ ul.products-filter{display:block !important;width:auto !important;text-align:cen
 ul.products-filter li{float:none !important;display:inline-block !important;width:auto !important;max-width:92% !important;padding:0 8px !important;}
 ul.products-filter li a{display:inline-block !important;padding:11px 28px !important;white-space:nowrap !important;}
 }
+
+/* fix: .full-link overlay (z-index:10) intercepted button taps -> raise prod-buttons above it so reviews button scrolls instead of opening product modal */
+.products-item .prod-buttons{position:relative;z-index:20;}
+.products-item .prod-buttons a,.products-item .prod-buttons .to-reviews{position:relative;z-index:21;}
