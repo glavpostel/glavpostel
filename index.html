@@ -85,17 +85,11 @@ document.addEventListener('click', function(e){
   }
   // 1) клики по CTA, открывающим форму заказа
   document.addEventListener('click', function(e){
-    if(e.target.closest('a[href="#order"], a[href="#callback"], a.cb, #sat_ordering, #sat_order, .lead-iframe-wrap')){
+    if(e.target.closest('a[href="#order"], a[href="#callback"], a.cb, #sat_ordering, #sat_order')){
       fireIntent();
     }
   }, true);
-  // 2) фокус ушёл в iframe формы (юзер тыкнул внутрь xshopcart)
-  window.addEventListener('blur', function(){
-    setTimeout(function(){
-      var a=document.activeElement;
-      if(a && a.tagName==='IFRAME' && /xshopcart\.com/.test(a.src||'')) fireIntent();
-    }, 0);
-  });
+  
 })();
 </script>
 <!-- /AitiBot -->
