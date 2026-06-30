@@ -299,3 +299,10 @@ ul.products-filter li a{display:inline-block !important;padding:11px 28px !impor
 .prod-buttons .item{display:flex !important;justify-content:center !important;width:100% !important;max-width:300px !important;margin:0 !important;float:none !important;}
 .prod-buttons .item a{display:flex !important;align-items:center;justify-content:center;gap:8px;width:100% !important;max-width:100% !important;margin:0 !important;box-sizing:border-box !important;border-radius:10px !important;padding:13px 18px !important;white-space:nowrap;text-align:center;}
 .prod-buttons .to-reviews{font-size:17px;}
+/* v29: set composition shown inside product card (orange style) */
+.products-item .additional_fields{display:block!important;margin-top:14px;padding-top:12px;border-top:1px dashed #e7c9a0;text-align:left;}
+.products-item .additional_fields::before{content:"\0412\0020\043A\043E\043C\043F\043B\0435\043A\0442\0435:";display:block;font-weight:700;color:#cf6207;margin-bottom:4px;}
+.products-item .additional_fields > div{font-size:14px;line-height:1.7;color:#3a3a3a;}
+.products-item .pillowcases::before{content:"\041D\0430\0432\043E\043B\043E\0447\043A\0438: ";font-weight:700;color:#e8730c;}
+.products-item .duvet-cover::before{content:"\041F\043E\0434\043E\0434\0435\044F\043B\044C\043D\0438\043A: ";font-weight:700;color:#e8730c;}
+.products-item .bedsheet::before{content:"\041F\0440\043E\0441\0442\044B\043D\044F: ";font-weight:700;color:#e8730c;}
