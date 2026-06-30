@@ -306,3 +306,10 @@ ul.products-filter li a{display:inline-block !important;padding:11px 28px !impor
 .products-item .pillowcases::before{content:"\041D\0430\0432\043E\043B\043E\0447\043A\0438: ";font-weight:700;color:#e8730c;}
 .products-item .duvet-cover::before{content:"\041F\043E\0434\043E\0434\0435\044F\043B\044C\043D\0438\043A: ";font-weight:700;color:#e8730c;}
 .products-item .bedsheet::before{content:"\041F\0440\043E\0441\0442\044B\043D\044F: ";font-weight:700;color:#e8730c;}
+/* ===== v31b hero desktop fit: taller block + flattering crop on PC; mobile untouched ===== */
+@media (min-width:1000px){
+  .header{min-height:600px !important;background-size:cover !important;background-position:center 30% !important;}
+}
+@media (min-width:1500px){
+  .header{min-height:660px !important;background-position:center 28% !important;}
+}
